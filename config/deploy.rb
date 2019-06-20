@@ -1,4 +1,5 @@
 lock '3.11.0'
+set :rails_env, 'production'
 
 set :application, 'freemarket_sample_0609c'
 set :repo_url,  'git@github.com:ghostmater/freemarket_sample_0609c.git'
@@ -14,7 +15,6 @@ set :ssh_options, auth_methods: ['publickey'],
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
-set :rails_env, 'production'
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
