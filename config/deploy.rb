@@ -1,8 +1,7 @@
 lock '3.11.0'
-set :rails_env, 'production'
 
 set :application, 'freemarket_sample_0609c'
-set :repo_url,  'git@github.com:ghostmater/freemarket_sample_0609c.git'
+set :repo_url,  'git@github.com:ghostmater/freemarket_sample_0609c/tree/deployment.git'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
