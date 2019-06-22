@@ -60,4 +60,5 @@
 #     # password: "please use keys"
 #   }
 set :rails_env, 'production'
+set :unicorn_rack_env, 'production'
 server '54.95.99.81', user: 'ec2-user', roles: %w{app db web}
