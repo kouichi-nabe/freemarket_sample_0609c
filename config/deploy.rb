@@ -16,6 +16,7 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
+# 環境変数設定
 set :default_env, {
   BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
   BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"]
