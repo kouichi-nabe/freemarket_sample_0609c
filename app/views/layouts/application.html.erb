@@ -10,6 +10,347 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="header-inner">
+        <div class="header__top">
+          <h1 class="header__top__title">
+            <a href="#">
+              <%= image_tag "merukari.svg"  %>
+            </a>
+          </h1>
+          <form class="header__top__form" action="">
+            <input type="search" name="keyword" placeholder="何かお探しですか?" class="input-default">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </form>
+        </div>
+        <div class="header__nav-box clearfix">
+          <div class="left-nav">
+            <ul class="left-nav__list">
+              <li>
+                <h2>
+                  <a href="#" class="nav-root-list-parent">
+                    <i class="fa fa-list" aria-hidden="true"></i>
+                    <span>カテゴリーから探す</span>
+                  </a>
+                </h2>
+                <ul class="nav-list-parent">
+                  <!-- 繰り返し -->
+                  <li class="nav-list-parent__item">
+                    <h3>
+                      <a href="#">レディース</a>
+                    </h3>
+                    <ul class="nav-list-child">
+                      <!-- 繰り返し -->
+                      <li class="nav-list-child__item">
+                        <a href="#">トップス</a>
+                        <ul class="nav-list-grand-child">
+                          <!-- 繰り返し -->
+                          <li class="nav-list-grand-child__item">
+                            <a href="#">Tシャツ/カットソー(半袖/袖なし)</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <h2>
+                  <a href="#" class="nav-root-list-parent">
+                    <i class="fa fa-tag" aria-hidden="true"></i>
+                    <span>ブランドから探す</span>
+                  </a>
+                  <ul class="nav-list-parent">
+                    <!-- 繰り返し -->
+                    <li class="nav-list-parent__item">
+                      <h3>
+                        <a href="#">シャネル</a>
+                      </h3>
+                    </li>
+                  </ul>
+                </h2>
+              </li>
+            </ul>
+          </div>
+          <div class="right-nav">
+            <ul class="user-nav">
+              <li class="user-nav__item">
+                <a href="#" class="user-nav__item__link">
+                  <i class="fa fa-heart-o" aria-hidden="true"></i>
+                  <span>いいね！一覧</span>
+                </a>
+              </li>
+
+              <li class="user-nav__item">
+                <a href="#" class="user-nav__item__link">
+                  <i class="fa fa-bell-o" aria-hidden="true"></i>
+                  <span>お知らせ</span>
+                  <div class="user-nav__item__link__count">
+                    7
+                  </div>
+                </a>
+                <ul class="user-nav__item__box mypage-item-list">
+                  <!-- 繰り返し -->
+                  <li>
+                    <a href="#" class="mypage-item-link">
+                      <figure>
+                        <%= image_tag "mercari_profile.png" %>
+                      </figure>
+                      <div class="mypage-item-link__body">
+                        <div class="mypage-item-link__body__text">
+                          「ファミチキ」「からあげクン」「ななチキなどの揚げ物」が"¥11〜"で買えるクーポン配信中！
+                        </div>
+                        <div class="mypage-item-link__body__time">
+                          <i class="fa fa-clock-o" aria-hidden="true"></i>
+                          <span id="news-time">8時間前</span>
+                        </div>
+                      </div>
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="user-nav__item">
+                <a href="#" class="user-nav__item__link">
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                  <span>やることリスト</span>
+                </a>
+                <ul class="user-nav__item__box mypage-item-list">
+                  <li>
+                    <a href="#" class="mypage-item-link">
+                      <figure>
+                        <%= image_tag "mercari_profile.png" %>
+                      </figure>
+                      <div class="mypage-item-link__body">
+                        <div class="mypage-item-link__body__text">
+                          ○○○○さんから「〜〜〜」の取引メッセージがあります。返信をお願いします
+                        </div>
+                        <div class="mypage-item-link__body__time">
+                          <i class="fa fa-clock-o" aria-hidden="true"></i>
+                          <span id="news-time">2時間前</span>
+                        </div>
+                      </div>
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="user-nav__item">
+                <a href="#" class="user-nav__item__link">
+                  <figure>
+                    <div>
+                      <%= image_tag "member_photo_noimage_thumb.png", class: "small-member-photo" %>
+                    </div>
+                  </figure>>
+                  <span>マイページ</span>
+                </a>
+                <div class="user-nav__item__box mypage-box">
+                  <div class="mypage-state text-center">
+                    <div class="mypage-state__my-info">
+                      <div>
+                        <%= image_tag "member_photo_noimage_thumb.png", class: "big-member-photo" %>
+                      </div>
+                      <p class="my-name">user</p>
+                    </div>
+                    <ul class="mypage-review">
+                      <li>
+                        <a href="#" class="mypage-review-link">
+                          評価:1
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="mypage-review-link">
+                          出品数:0
+                        </a>
+                      </li>
+                    </ul>
+                    <ul class="mypage-sales-point">
+                      <li>
+                        <a href="#" class="mypage-sales-point-link clearfix">
+                          <div class="mypage-sales-point-link__left">
+                            売上金
+                          </div>
+                          <div class="mypage-sales-point-link__right">
+                            ¥0
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" class="mypage-sales-point-link clearfix">
+                          <div class="mypage-sales-point-link__left">
+                            ポイント
+                          </div>
+                          <div class="mypage-sales-point-link__right">
+                            P 0
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <ul class="mypage-nav-list">
+                    <!-- 繰り返し -->
+                    <li>
+                      <a href="#" class="mypage-nav-list-link">
+                        いいね!一覧
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="mypage-nav-list-link">
+                        出品した商品 - 出品中
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="mypage-nav-list-link">
+                        出品した商品 - 取引中
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="mypage-nav-list-link">
+                        出品した商品 - 売却済み
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="mypage-nav-list-link">
+                        購入した商品 - 取引中
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="mypage-nav-list-link">
+                        購入した商品 - 過去の取引
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <%= yield %>
+
+    <aside class="aside">
+      <div class="banner">
+        <div class="banner__left">
+          <h2>スマホでかんたんフリマアプリ</h2>
+          <p>今すぐ無料ダウンロード!</p>
+          <div class="banner__left__icon">
+            <div class="banner__left__icon__mercari">
+              <%= image_tag "mercari_icon.png" %>
+            </div>
+            <ul class="clearfix">
+              <li>
+                <a href="https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8" target="_blank">
+                  <%= image_tag "app-store.svg" %>
+                </a>
+              </li>
+              <li>
+                <a href="https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja" target="_blank">
+                  <%= image_tag "google-play.svg" %>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="banner__right">
+          <%= image_tag "download_content_pc.png" %>
+        </div>
+      </div>
+    </aside>
+
+    <footer class="footer">
+      <nav class="clearfix">
+        <div class="footer-cell">
+          <h2 class="footer-cell__head">メルカリについて</h2>
+          <ul>
+            <li><a href="#">会社概要（運営会社）</a></li>
+            <li><a href="#">採用情報</a></li>
+            <li><a href="#">プレスリリース</a></li>
+            <li><a href="#">公式ブログ</a></li>
+            <li><a href="#">メルカリロゴ利用ガイドライン</a></li>
+            <li class="footer-sns-link">
+              <a href="https://twitter.com/mercari_jp">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="footer-sns-link">
+              <a href="https://www.facebook.com/mercarijp">
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-cell">
+          <h2 class="footer-cell__head">ヘルプ＆ガイド</h2>
+          <ul>
+            <li><a href="#">メルカリガイド</a></li>
+            <li><a href="#">らくらくメルカリ便</a></li>
+            <li><a href="#">ゆうゆうメルカリ便</a></li>
+            <li><a href="#">大型メルカリ便</a></li>
+            <li><a href="#">車体取引ガイド</a></li>
+            <li><a href="#">メルカリあんしん・あんぜん宣言！</a></li>
+            <li><a href="#">偽ブランド品撲滅への取り組み</a></li>
+            <li><a href="#">メルカリボックス</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-cell full-width">
+          <h2 class="footer-cell__head">プライバシーと利用規約</h2>
+          <div class="footer-cell__inner">
+            <ul>
+              <li><a href="#">プライバシーポリシー</a></li>
+              <li><a href="#">メルカリ使用規約</a></li>
+              <li><a href="#">あんしんスマホサポート制度に関する利用規約</a></li>
+              <li><a href="#">コンプライアンスポリシー</a></li>
+            </ul>
+          </div>
+          <div class="footer_-cell__inner">
+            <ul>
+              <li><a href="#">個人データの安全管理に係る基本方針</a></li>
+              <li><a href="#">特定商取引に関する表記</a></li>
+              <li><a href="#">資金決済法に基づく表示</a></li>
+              <li><a href="#">法令順守と犯罪抑止のために</a></li>
+              <li><a href="#">返品・返金ポリシー</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-cell footer-nav-lang">
+          <h2 class="footer-cell__head">国</h2>
+          <ul>
+            <li><a href="#">日本</a></li>
+            <li><a href="#">United States</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="footer-bottom">
+        <a href="#" class="footer-bottom__logo">
+          <%= image_tag "logo-white.svg" %>
+        </a>
+        <span class="footer-bottom__copyright">
+          <small>©︎2019 Mercari</small>
+        </span>
+      </div>
+    </footer>
+
+    <a href="#" class="sell-btn">
+      <div>出品</div>
+      <i class="fa fa-camera" aria-hidden="true"></i>
+    </a>
+
   </body>
 </html>
