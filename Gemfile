@@ -67,4 +67,5 @@ gem "font-awesome-sass"
 gem 'pry-rails'
 gem 'erb2haml'
 gem 'jquery-rails'
+gem "jquery-slick-rails"
 gem "font-awesome-rails"
