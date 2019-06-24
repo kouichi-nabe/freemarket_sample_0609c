@@ -1,0 +1,137 @@
+.footer a {
+  color: $white_color;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.footer {
+  padding: 0 20px 10px 20px;
+  background-color: $foot_back_color;
+  color: $white_color;
+  nav {
+    margin: 0 auto;
+    @include mq(md) {
+      width: 700px;
+    }
+    @include mq() {
+      width: 1020px;
+    }
+    .footer-cell {
+      display: block;
+      float: left;
+      margin-top: 18px;
+      padding: 10px;
+      width: 50%;
+      @include mq() {
+        padding: 0 40px 0 0;
+        width: 23%;
+        vertical-align: top;
+      }
+      &:first-child {
+        padding: o 10px 0 0;
+        @include mq() {
+          padding: 0 20px 0 0;
+          width: 20%;
+        }
+      }
+      &__head {
+        color: $white_color;
+        font-size: 16px;
+        font-weight: 100;
+      }
+      ul {
+        li {
+          margin: 14px 0 0;
+          color: $white_color;
+          &:first-child {
+            margin: 16px 0 0;
+          }
+          a {
+            display: block;
+            opacity: 0.7;
+          }
+        }
+        .footer-sns-link {
+          display: inline-block;
+          a {
+            opacity: 1;
+            i {
+              margin: 16px 18px 0 0;
+              color: $white_color;
+              background-color: transparent;
+            }
+            .fa-twitter {
+              margin: 16px 18px 0 0;
+              font-size: 24px;
+              color: $white_color;
+              background-color: transparent;
+            }
+            .fa-facebook-official {
+              margin: 16px 18px 0 0;
+              font-size: 26px;
+              color: $white_color;
+              background-color: transparent;
+            }
+          }
+        }
+      }
+      &__inner {
+        float: left;
+        padding-left: 10px;
+        vertical-align: top;
+        width: 50%;
+        &:first-of-type {
+          padding: 0 10px 0 0;
+        }
+      }
+    }
+    .footer-cell.full-width {
+      width: 100%;
+      margin: 30px 0 0;
+      padding: 0;
+      @include mq() {
+        margin-top: 18px;
+        padding: 0 40px 0 0;
+        width: 42%;
+      }
+    }
+    .footer-nav-lang {
+      margin-top: 35px;
+      padding: 0;
+      @include mq(md) {
+        width: auto;
+      }
+      @include mq() {
+        margin-top: 18px;
+      }
+    }
+  }
+  .footer-bottom {
+    margin: 50px auto 0;
+    @include mq(md) {
+      width: 700px;
+    }
+    @include mq() {
+      margin: 30px auto 20px;
+      width: 1020px;
+    }
+    &__logo {
+      display: inline-block;
+      margin-right: 10px;
+      width: auto;
+    }
+    &__copyright {
+      display: inline-block;
+      margin: 8px 0 0;
+      width: auto;
+      text-align: center;
+      vertical-align: sub;
+      @include mq() {
+        width: 745px;
+      }
+      small {
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.aside {
+  background-image: url(aside_back.jpg);
+  background-position: center;
+  background-size: cover;
+  .banner {
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    width: 750px;
+    height: 260px;
+    color: $white_color;
+    &__left {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      transform: translate(0, -50%);
+      -webkit-ransform: translate(0, -50%);
+      @include mq() {
+        left: 0;
+      }
+      h2 {
+        font-size: 16px;
+        text-shadow: 0 0 5px $text_shadow_color;
+        line-height: 1.4;
+        @include mq() {
+          font-size: 24px;
+        }
+      }
+      p {
+        margin: 10px 0 0;
+        font-size: 24px;
+        text-shadow:  0 0 5px $text_shadow_color;
+        @include mq() {
+          font-size: 35px;
+        }
+      }
+      &__icon {
+        margin: 20px 0 0;
+        &__mercari {
+          float: left;
+          img {
+            vertical-align: middle;
+            width: 68px;
+          }
+        }
+        ul {
+          float: left;
+          margin: 0 0 0 24px;
+          line-height: 68px;
+          li {
+            float: left;
+            &:last-child {
+              margin: 0 0 0 16px;
+            }
+            a {
+              display: block;
+              line-height: 68px;
+              img {
+                vertical-align: middle;
+                width: 133px;
+                height: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 300px;
+      height: 100%;
+      img {
+        width: 100%;
+        vertical-align: middle;
+      }
+    }
+  }
+}
