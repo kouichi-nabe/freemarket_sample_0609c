@@ -9,10 +9,11 @@
     %h2.pickup-head ピックアップカテゴリー
     %section.items-box-wrapper.clearfix
       %h3.text-center
-        %a{:href => "/jp/category/1/"}
+        = link_to '/jp/category/1/' do
           レディース 新着アイテム
       .items-box-content.clearfix
         = render partial: "item"
         / colection: @変数 の変数で内容を入れる
       .view-all
-        %a{:href => "/jp/category/1/"} すべての商品を見る
+        = link_to '/jp/category/1/' do
+          すべての商品を見る
