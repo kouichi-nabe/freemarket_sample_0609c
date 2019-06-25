@@ -9,6 +9,10 @@
   background-color: $main_color;
   color: $white_color;
   text-align: center;
+  &:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
   @include mq(md) {
     bottom: 32px;
     right: 32px;

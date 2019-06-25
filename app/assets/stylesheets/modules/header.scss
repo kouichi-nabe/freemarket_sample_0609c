@@ -97,6 +97,13 @@
             &:first-child {
               padding-left: 0;
             }
+            &:hover span {
+              color: $link_color;
+            }
+            &:hover .nav-root-list-parent {
+              text-decoration: none;
+              opacity: 1;
+            }
             &:hover .nav-list-parent__item {
               display: block;
             }
@@ -212,6 +219,11 @@
               line-height: 32px;
               font-size: 0;
               color: $black_color;
+              &:hover {
+                text-decoration: none;
+                color: $link_color;
+                opacity: 1;
+              }
               i {
                 font-size: 20px;
                 color: $icon_color;
