@@ -1,0 +1,19 @@
+%main.topgage
+  %section.slide-wrapper
+    .slider
+      .slider__item
+        = image_tag "banner-camp.jpg"
+      .slider__item
+        = image_tag "banner-natsukashi.jpg"
+  %section.pickup-wrapper
+    %h2.pickup-head ピックアップカテゴリー
+    %section.items-box-wrapper.clearfix
+      %h3.text-center
+        = link_to root_path do
+          レディース 新着アイテム
+      .items-box-content.clearfix
+        = render partial: "item"
+        / colection: @変数 の変数で内容を入れる
+      .view-all
+        = link_to root_path do
+          すべての商品を見る
