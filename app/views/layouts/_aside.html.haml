@@ -1,0 +1,17 @@
+%aside.aside
+  .banner
+    .banner__left
+      %h2 スマホでかんたんフリマアプリ
+      %p 今すぐ無料ダウンロード!
+      .banner__left__icon
+        .banner__left__icon__mercari
+          = image_tag "mercari_icon.png"
+        %ul.clearfix
+          %li
+            = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", target: "_blank" do
+              = image_tag "app-store.svg"
+          %li
+            = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", target: "_blank" do
+              = image_tag "google-play.svg"
+    .banner__right
+      = image_tag "download_content_pc.png"
