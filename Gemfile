@@ -69,6 +69,7 @@ group :test do
   gem "haml-rails"
   gem 'pry-rails'
   gem 'erb2haml'
+  gem "haml-rails"
 end
 
 group :production do
