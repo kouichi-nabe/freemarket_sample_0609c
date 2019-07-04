@@ -279,6 +279,11 @@
                   padding: 16px;
                   min-height: 80px;
                   color: $link_color;
+                  &:hover {
+                    background-color: #fafafa;
+                    opacity: 1;
+                    text-decoration: none;
+                  }
                   figure {
                     position: relative;
                     overflow: hidden;
