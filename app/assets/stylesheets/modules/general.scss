@@ -1,0 +1,37 @@
+.redbtn{
+  margin: 0;
+  background: $main_color;
+  border: 1px solid $main_color;
+  color: $white_color;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+.bluebtn {
+  margin: 0;
+  background: $white_color;
+  border: 1px solid $link_color;
+  color: $link_color;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+.required__icon {
+  background-color: $main_color;
+  padding: 3px 5px;
+  color: $white_color;
+  border-radius: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 570;
+  margin-left: 10px;
+}
