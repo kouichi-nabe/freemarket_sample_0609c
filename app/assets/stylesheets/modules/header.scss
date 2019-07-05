@@ -27,6 +27,24 @@
   // @include mq(md) {
   //   display: block;
   // }
+  &__logo-img_signup {
+    display: block;
+    float: left;
+
+    margin: {
+      bottom: 30px;
+      left: 70px;
+      right: 100px;
+    }
+  }
+  .header__logo-img_signup {
+    display: block;
+
+    margin: {
+      bottom: 30px;
+      left: 70px;
+    }
+  }
   .header-inner {
     width: 700px;
     margin: 0 auto;
@@ -82,6 +100,22 @@
           cursor: pointer;
         }
       }
+    }
+    .menu__signup {
+      float: left;
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      margin-left: 175px;
+      border-radius: 4px;
+    }
+    .menu__signin {
+      float: right;
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 4px;
+      margin-left: 20px;
     }
     .header__nav-box {
       margin: 8px 0 0;

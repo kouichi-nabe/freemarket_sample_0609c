@@ -1,0 +1,32 @@
+%headers
+  = image_tag 'mercari_logo_horizontal.png',size: "234x76" , class: "header__logo-img"
+
+.login
+  .login__info-container
+    %p アカウントをお持ちでない方はこちら
+    .login__btn_container
+    .user__btn_new
+      = link_to "新規会員登録","/users/new", class: "new-register"
+    %br
+    %br
+    .user__btn_fb
+      = image_tag 'facebook_icon.png',size: "35x35" , class: "facebook-icon"
+      = link_to "Facebookで登録","＃", class: "new-register"
+    .user__btn_google
+      = image_tag 'google_icon.png',size: "37x37" , class: "google-icon "
+      = link_to "Googleで登録","＃", class: "google-register"
+    %br
+    %br
+    = text_field_tag :content,"", placeholder: 'メールアドレス',class: 'text_field'
+    = text_field_tag :content,"", placeholder: 'パスワード',class: 'text_field'
+
+  = image_tag 'rbot-img.png',size: "325x90" , class: "rbot-img2"
+
+  .login-btn
+    = link_to "ログイン",root_path, class:'login_btn'
+    -#### 仮置き。サーバサイド実装後、修正
+  %br
+  %br
+  %p.blue パスワードをお忘れの方
+
+= render partial:'items/item_footer' 
