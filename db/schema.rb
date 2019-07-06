@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_06_053346) do
+ActiveRecord::Schema.define(version: 2019_07_06_123523) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "post_code", null: false
@@ -76,10 +76,10 @@ ActiveRecord::Schema.define(version: 2019_07_06_053346) do
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id", null: false
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "item_id", null: false
     t.index ["item_id"], name: "index_images_on_item_id"
   end
 
@@ -90,8 +90,6 @@ ActiveRecord::Schema.define(version: 2019_07_06_053346) do
     t.bigint "seller_id"
     t.string "brand"
     t.bigint "category_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "size"
     t.integer "price", null: false
     t.integer "postage", null: false
@@ -100,6 +98,8 @@ ActiveRecord::Schema.define(version: 2019_07_06_053346) do
     t.integer "shipping_date", null: false
     t.integer "condition", null: false
     t.integer "receive_completed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
@@ -130,14 +130,14 @@ ActiveRecord::Schema.define(version: 2019_07_06_053346) do
     t.string "self_introduction"
     t.date "brithday"
     t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "postalcode"
     t.string "prefecture"
     t.string "city"
     t.string "street_number"
     t.string "building"
     t.string "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -155,11 +155,11 @@ ActiveRecord::Schema.define(version: 2019_07_06_053346) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "nickname", null: false
     t.integer "point", default: 0, null: false
     t.integer "sum_sales", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
