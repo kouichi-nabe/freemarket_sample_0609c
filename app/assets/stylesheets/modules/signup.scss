@@ -65,12 +65,12 @@
         height: 50px;
         font-size: 16px;
         margin-bottom: 20px;
-        color: $form_gray;
         padding-left: 10px;
       }
     }
 
-    .next-btn {
+    input.next_btn {
+      color: $white_color;
       background-color: $main_color;
       width: 400px;
       padding: 13px;
@@ -401,6 +401,77 @@ sub.left {
   }
 }
 
-.rbot-img2{
-  margin-left: 140px;
+.signup-errors {
+  text-align: center;
+  font-size: 14px;
+  color: red;
+  padding-top: 10px;
+}
+
+sub.left {
+  float: left;
+
+  margin: {
+    top: 24px;
+    left: 10px;
+  }
+}
+
+#user_profile_attributes_brithday_1i {
+  @extend .form;
+  width: 90px;
+  height: 50px;
+  font-size: 16px;
+  padding-left: 20px;
+  float: left;
+  background-color: white;
+  margin: {
+    bottom: 5px;
+    top: 10px;
+  }
+}
+
+#user_profile_attributes_brithday_2i {
+  @extend .form;
+  width: 90px;
+  height: 50px;
+  font-size: 16px;
+  padding-left: 20px;
+  float: left;
+  background-color: white;
+  margin: {
+    bottom: 5px;
+    top: 10px;
+    left: 20px;
+  }
+}
+
+#user_profile_attributes_brithday_3i {
+  @extend .form;
+  width: 90px;
+  height: 50px;
+  font-size: 16px;
+  padding-left: 15px;
+  float: left;
+  background-color: white;
+  margin: {
+    bottom: 20px;
+    top: 10px;
+    left: 25px;
+  }
+}
+
+.select_tag_left {
+  @extend .form;
+  width: 90px;
+  height: 50px;
+  font-size: 16px;
+  padding-left: 15px;
+  float: left;
+
+  margin: {
+    bottom: 20px;
+    top: 10px;
+    left: 25px;
+  }
 }
