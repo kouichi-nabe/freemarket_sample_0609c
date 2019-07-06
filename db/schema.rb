@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_02_153847) do
+ActiveRecord::Schema.define(version: 2019_07_06_053346) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "post_code", null: false
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 2019_07_02_153847) do
     t.index ["buyer_id"], name: "index_buy_orders_on_buyer_id"
     t.index ["item_id"], name: "index_buy_orders_on_item_id"
     t.index ["seller_id"], name: "index_buy_orders_on_seller_id"
+  end
+
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -123,6 +132,12 @@ ActiveRecord::Schema.define(version: 2019_07_02_153847) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "postalcode"
+    t.string "prefecture"
+    t.string "city"
+    t.string "street_number"
+    t.string "building"
+    t.string "phone_number"
   end
 
   create_table "user_reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -150,6 +165,7 @@ ActiveRecord::Schema.define(version: 2019_07_02_153847) do
   end
 
   add_foreign_key "buy_orders", "items"
+  add_foreign_key "cards", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "items"
