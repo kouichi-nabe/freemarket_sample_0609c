@@ -8,6 +8,12 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.string :self_introduction
       t.date :brithday
       t.integer :user_id
+      t.string :postalcode
+      t.string :prefecture
+      t.string :city
+      t.string :street_number
+      t.string :building
+      t.string :phone_number
 
       t.timestamps
     end
