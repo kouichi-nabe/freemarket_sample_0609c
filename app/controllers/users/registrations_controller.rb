@@ -11,13 +11,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def new
     @user = User.new
-    
+    @profile = @user.build_profile
   end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    if User.profile_with_user_is_valid?(params)
+       super and return
+    else
+      @user =build_resource(sign_up_params)
+      @profile = @user.profile
+      @errors='未記入の箇所があります。'
+      render 'new' and return
+    end
+  end
 
   # GET /resource/edit
   # def edit
@@ -64,4 +71,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+  def after_sign_up_path_for(resource)
+    signup_sms_confirmation_path
+ end
 end

@@ -7,7 +7,14 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.references :seller
       t.string :brand
       t.references :category, null: false, foreign_key: true
-
+      t.integer :size
+      t.integer :price, null: false
+      t.integer :postage, null: false
+      t.integer :shipping_method, null: false
+      t.integer :region, null: false
+      t.integer :shipping_date, null: false
+      t.integer :condition, null: false
+      t.integer :receive_completed
       t.timestamps
     end
   end

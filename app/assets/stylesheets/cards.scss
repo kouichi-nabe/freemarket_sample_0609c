@@ -402,6 +402,7 @@ a.start-btn {
   color: $form_gray;
   padding-left: 20px;
   float: left;
+  background-color: white;
 
   margin: {
     bottom: 5px;
@@ -434,4 +435,17 @@ sub.month {
 .credit_card {
   margin-top: 50px;
   font-size: 18px;
+}
+
+.headers {
+  height: 100px;
+  padding-top: 40px;
+
+  .header__logo-img {
+    display: block;
+
+    margin: 0 auto {
+      bottom: 30px;
+    }
+  }
 }
