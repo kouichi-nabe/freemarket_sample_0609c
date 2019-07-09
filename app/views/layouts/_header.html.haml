@@ -80,7 +80,7 @@
                         %span#news-time 2時間前
                     %i.fa.fa-arrow-right{"aria-hidden": "true"}
             %li.user-nav__item
-              = link_to root_path, class: 'user-nav__item__link' do
+              = link_to users_path(current_user), class: 'user-nav__item__link' do
                 %figure>
                   %div
                     = image_tag "member_photo_noimage_thumb.png", class: "small-member-photo"
