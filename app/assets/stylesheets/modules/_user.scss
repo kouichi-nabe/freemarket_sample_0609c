@@ -1,0 +1,445 @@
+.user {
+  width: 800px;
+  padding-bottom: 150px;
+  margin: 0 auto;
+  background-color: $white_color;
+  height: 400px;
+
+  &__title {
+    height: 110px;
+    border-bottom: 0.09px solid $border_gray;
+    font-size: 26px;
+
+    h2 {
+      padding: 32px 16px;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+
+  &__btn_container {
+    padding: {
+      top: 35px;
+      left: 235px;
+      right: 100px;
+    }
+  }
+
+  &__btn_mail {
+    background-color: $border_gray;
+    width: 300px;
+    padding: 13px;
+
+    margin: {
+      top: 19px;
+    }
+
+    a {
+      color: $black;
+      font-size: 15px;
+      display: inline;
+      text-decoration: none;
+      text-align: center;
+      margin-left: 40px;
+    }
+
+    .mail-icon {
+      color: rgb(196, 189, 189);
+      margin-left: 5px;
+      margin-top: 6px;
+      text-align: center;
+      float: left;
+    }
+  }
+
+  &__btn_fb {
+    background-color: $facebook_blue;
+    width: 300px;
+    padding: 13px;
+    height: 50px;
+
+    margin: {
+      top: 19px;
+    }
+
+    a {
+      line-height: center;
+      color: $white_color;
+      font-size: 15px;
+      display: inline;
+      text-decoration: none;
+      text-align: center;
+      margin-left: 40px;
+    }
+
+    .facebook-icon {
+      line-height: 53px;
+      text-align: center;
+      float: left;
+    }
+  }
+
+  &__btn_google {
+    border: 0.09px solid rgb(155, 152, 152);
+    background-color: $white_color;
+    width: 296px;
+    padding: 15px;
+    position: relative;
+
+    margin: {
+      top: 19px;
+    }
+
+    a {
+      color: $black;
+      font-size: 15px;
+      display: inline;
+      text-decoration: none;
+      text-align: center;
+      margin-left: 74px;
+    }
+
+    .google-icon {
+      line-height: 53px;
+      text-align: center;
+      float: left;
+      padding-bottom: 3px;
+      position: absolute;
+      top: 9px;
+      left: 12px;
+    }
+  }
+}
+
+foot {
+  text-align: center;
+
+  nav {
+    display: inline-block;
+    text-align: center;
+    margin-left: 440px;
+    margin-bottom: 25px;
+
+    li {
+      float: left;
+      font-size: 0.7rem;
+
+      margin: {
+        top: 35px;
+        left: 20px;
+        bottom: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: $black;
+        font-size: 16px;
+        float: left;
+      }
+    }
+  }
+
+  .footer__logo-img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  small {
+    font: {
+      size: 12px;
+      weight: none;
+    }
+  }
+}
+
+
+.signup {
+  width: 800px;
+  margin: 0 auto;
+  background-color: $white_color;
+  .signup-errors {
+    min-height: 50px;
+  }
+  &__title {
+    height: 110px;
+    border-bottom: 0.09px solid $border_gray;
+    font-size: 26px;
+
+    h2 {
+      padding: 32px 16px;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+
+  &__info-container {
+    padding: {
+      top: 35px;
+      left: 210px;
+      right: 150px;
+    }
+
+    h3 {
+      font: {
+        weight: 600;
+        size: 15px;
+      }
+
+      float: left;
+      margin-top: 10px;
+    }
+
+    ul {
+      position: relative;
+
+      li {
+        float: left;
+
+        margin: {
+          bottom: 10px;
+        }
+      }
+
+      .required__icon {
+        display: inline;
+      }
+
+      p {
+        font-size: 13px;
+      }
+
+      .form {
+        border: 1px solid $border_gray {
+          radius: 0.3rem;
+        }
+      }
+
+      .text_field {
+        @extend .form;
+        width: 400px;
+        height: 50px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        padding-left: 10px;
+      }
+    }
+
+    .next-btn {
+      background-color: $main_color;
+      width: 400px;
+      padding: 13px;
+      text-align: center;
+
+      margin: {
+        top: 19px;
+      }
+
+      a {
+        color: $white_color;
+        font-size: 1.9rem;
+        display: inline;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .select_tag {
+    @extend .form;
+    width: 100px;
+    height: 50px;
+    font-size: 16px;
+    padding-left: 15px;
+
+    margin: {
+      bottom: 20px;
+      top: 7px;
+    }
+  }
+
+  i.fa_icon_1 {
+    font-size: 0.9rem;
+    color: $fa_icon_gray;
+    position: absolute;
+    top: 1090px;
+    left: 70px;
+  }
+
+  i.fa_icon_2 {
+    font-size: 0.9rem;
+    color: $fa_icon_gray;
+    position: absolute;
+    top: 1090px;
+    left: 200px;
+  }
+
+  i.fa_icon_3 {
+    font-size: 0.9rem;
+    color: $fa_icon_gray;
+    position: absolute;
+    top: 1090px;
+    left: 330px;
+  }
+
+  sub {
+    font-size: 0.9rem;
+    background: white;
+  }
+
+  .dscription p {
+    color: $black;
+    display: inline-block;
+    font-size: 12.8px;
+  }
+
+  p.blue {
+    font-size: 12.8px;
+    color: $link_color;
+  }
+
+  p.gray {
+    font-size: 12.8px;
+  }
+
+  .link-box {
+    margin: {
+      top: 40px;
+    }
+
+    p {
+      color: $link_color;
+      font-size: 14px;
+      float: right;
+      margin-left: 260px;
+    }
+
+    .arrow_blue {
+      color: $link_color;
+      font-size: 15px;
+      float: right;
+
+      padding: {
+        left: 3px;
+        top: 3px;
+      }
+    }
+  }
+}
+
+.login {
+  width: 600px;
+  padding-bottom: 150px;
+  margin: 0 auto;
+  background-color: $white_color;
+  height: 650px;
+
+  &__info-container {
+    padding: {
+      top: 35px;
+      left: 150px;
+      right: 150px;
+    }
+
+    p {
+      font-size: 15px;
+      margin-left: 25px;
+    }
+
+    .login__btn_container {
+      padding: {
+        top: 10px;
+      }
+    }
+
+    .user__btn_new {
+      background-color: $link_color;
+      width: 100%;
+      padding: 13px;
+      //text-align: center; 今後使う可能性があるので、コメントアウト
+
+      .new-register {
+        padding-left: 60px;
+      }
+
+      a {
+        margin-left: 40px;
+        color: $white_color;
+        font-size: 15px;
+        display: inline;
+
+        text: {
+          decoration: none;
+          align: center;
+        }
+      }
+    }
+  }
+
+  .form {
+    border: 1px solid $border_gray {
+      radius: 0.3rem;
+    }
+  }
+
+  .text_field {
+    @extend .form;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+  }
+
+  .login-btn {
+    background-color: $main_color;
+    width: 300px;
+    padding: 13px;
+    text-align: center;
+
+    margin: {
+      top: 19px;
+      left: 150px;
+    }
+
+    a {
+      color: $white_color;
+      font-size: 1.5rem;
+      display: inline;
+      text-decoration: none;
+    }
+  }
+
+  p.blue {
+    font-size: 15px;
+    color: $link_color;
+    margin-left: 150px;
+  }
+}
+.header__logo-img {
+  display: block;
+
+  margin: 0 auto {
+    bottom: 30px;
+  }
+}
+.header__logo-img_signup {
+  display: block;
+}
+.header__logo-img {
+  display: block;
+
+  margin: 0 auto {
+    bottom: 30px;
+  }
+}
+
+.footer__logo-img {
+  display: block;
+  margin: 0 auto;
+}
+
+small {
+  font: {
+    size: 12px;
+    weight: none;
+  }
+}
