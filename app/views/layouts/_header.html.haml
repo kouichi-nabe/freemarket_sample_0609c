@@ -6,14 +6,14 @@
           = image_tag "merukari.svg"
       %form.header__top__form{action: ""}
         %input.input-default{name: "keyword", placeholder: "何かお探しですか?", type: "search"}/
-        %i.fa.fa-search{"aria-hidden": "true"}
+        =fa_icon("search")
     .header__nav-box.clearfix
       .left-nav
         %ul.left-nav__list
           %li
             %h2
               = link_to root_path, class: 'nav-root-list-parent' do
-                %i.fa.fa-list{"aria-hidden": "true"}
+                =fa_icon("list")
                 %span カテゴリーから探す
             %ul.nav-list-parent
               %li.nav-list-parent__item
@@ -80,7 +80,7 @@
                         %span#news-time 2時間前
                     %i.fa.fa-arrow-right{"aria-hidden": "true"}
             %li.user-nav__item
-              = link_to root_path, class: 'user-nav__item__link' do
+              = link_to users_path(current_user), class: 'user-nav__item__link' do
                 %figure>
                   %div
                     = image_tag "member_photo_noimage_thumb.png", class: "small-member-photo"
@@ -145,4 +145,4 @@
                 新規会員登録
             = link_to new_user_session_path, class: 'menu__signin bluebtn' do
               %li
-                ログイン           
+                ログイン
