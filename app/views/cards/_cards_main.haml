@@ -5,11 +5,11 @@
     %p クレジットカード一覧
     .credit__btn_add
       = fa_icon 'credit-card', class:'credit-card'
-      = link_to "クレジットカードを追加する","/users/1/cards/1/edit", class:'credit_card'
-      -#### 仮置き。サーバサイド実装後修正
+      = link_to "クレジットカードを追加する",add_user_cards_path, class:'credit_card'
+      
   .box__bottom_line
   .credit__box_link
-    %li
+    %p
       %p 支払い方法について
-    %li
+    %p
       = fa_icon 'chevron-right', class:'arrow_blue'
