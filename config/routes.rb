@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'logout/index'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
@@ -24,6 +25,6 @@ Rails.application.routes.draw do
     end
     resources :user_profiles, only: [:new, :create, :edit, :update]
     resources :user_confirmations, only: [:create, :edit, :update]
-    resources :logouts, only: :new
+    resources :logouts, only: :index
   end
 end
