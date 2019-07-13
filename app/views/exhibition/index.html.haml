@@ -1,6 +1,6 @@
 .sell-container
   .sell-container-inner
-    %h2 商品の情報を入力hogehoge
+    %h2 商品の情報を入力
     = form_for @item,:url => {:action => :create} do |f| # TODO: 要修正
           
       .sell-upload-box
@@ -8,6 +8,9 @@
           出品画像
           %span.form-require
             必須
+        %p 最大10枚までアップロードできます
+        = f.file_field :images
+        = f.file_field :images
 
       .sell-content
         .form-group
