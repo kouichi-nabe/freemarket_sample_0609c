@@ -9,6 +9,9 @@ class CardsController < ApplicationController
       render layout: 'application-off.haml'
    end
 
+   def add
+   end
+
    def pay
       if card_params.blank?
          flash[:alert] = '入力されたカード情報が不正です'
