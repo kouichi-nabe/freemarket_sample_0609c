@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   root to: 'items#index'
+
+  get "sell" => "exhibition#index"
+  post "create" => "exhibition#create"
+
   get 'signups/address' , to: 'signups#address'
   get 'signups/complete' , to: 'signups#complete'
   patch 'signup/address/create' , to: 'signups#address_create'
