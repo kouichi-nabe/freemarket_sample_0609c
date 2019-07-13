@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'logout/index'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
@@ -21,13 +22,14 @@ Rails.application.routes.draw do
     post 'signup/sms_confirmation' => 'signups#sms_send'
   end
   resources :users, only: [:new, :index] do
-    resources :cards, only: [:new] do
+    resources :cards, only: [:index, :new, :destroy, :show] do
       collection do
+        get 'add', to: 'cards#add'
         post 'pay', to: 'cards#pay'
       end
     end
     resources :user_profiles, only: [:new, :create, :edit, :update]
     resources :user_confirmations, only: [:create, :edit, :update]
-    resources :logouts, only: :new
+    resources :logouts, only: :index
   end
 end
