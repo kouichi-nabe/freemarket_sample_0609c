@@ -18,8 +18,9 @@ Rails.application.routes.draw do
     post 'signup/sms_confirmation' => 'signups#sms_send'
   end
   resources :users, only: [:new, :index] do
-    resources :cards, only: [:new] do
+    resources :cards, only: [:index, :new, :destroy, :show] do
       collection do
+        get 'add', to: 'cards#add'
         post 'pay', to: 'cards#pay'
       end
     end
