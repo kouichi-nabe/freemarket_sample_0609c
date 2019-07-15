@@ -1,0 +1,171 @@
+.item {
+  background-color: white;
+  width: 700px;
+  margin-left: 380px;
+  &__title {
+    line-height: 110px;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+  }
+  &__info {
+    
+    &__inner-content {
+      @extend .inner-content;
+      text-align: center;
+
+      &__name {
+        font-weight: bold;
+      }
+
+      &__subtotal {
+        height: 42px;
+        margin-top: 8px;
+
+        &__price {
+          margin-right: 10px;
+          font-size: 24px;
+          display: inline-block;
+        }
+        &__delivery-fee {
+          display: inline-block;
+          font-size: 14px;
+        }
+      }
+      &__point {
+        @extend .graybtn;
+        margin-top: 15px;
+      }
+      &__account {
+        padding: 12px 0;
+        display: flex;
+        justify-content: space-between;
+        font-size: 28px;
+
+        &__text {
+          display: inline-block;
+          font-weight: bold;
+        }
+        &__price {
+          display: inline-block;
+        }
+      }
+      &__purchase-btn {
+        @extend .redbtn;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__address {
+    @extend .box;
+    font-size: 14px;
+
+    &__inner-content {
+      @extend .inner-content;
+
+      &__heading {
+        font-weight: bold;
+      }
+      &__info {
+
+        &__fix {
+          color: $link_color;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  &__payment {
+    @extend .box;
+    font-size: 14px;
+
+    &__inner-content {
+      @extend .inner-content;
+
+      &__heading {
+        font-weight: bold;
+      }
+      &__info {
+
+        &__fix {
+          color: $link_color;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+.graybtn{
+  margin: 0;
+  background: $btn_gray;
+  border: 1px solid $btn_gray;
+  color: $black;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.bluebtn {
+  margin: 0;
+  background: $white_color;
+  border: 1px solid $link_color;
+  color: $link_color;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.bluebtn:hover {
+  margin: 0;
+  background: $link_color;
+  border: 1px solid $link_color;
+  color: $white_color;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.required__icon {
+    background-color: $main_color;
+    padding: 3px 5px;
+    color: $white_color;
+    border-radius: 0.2rem;
+    font-size: 0.7rem;
+    font-weight: 570;
+    margin-left: 10px;
+  }
+
+.box {
+    box-sizing: border-box;
+    border-bottom: 0.09px solid $border_gray;
+    padding: 40px;
+  }
+
+.form {
+  border:1px solid $border_gray {
+    radius: 0.3rem;
+  }
+}
+
+.inner-content {
+  max-width: 320px;
+  margin: 0 auto;
+}
