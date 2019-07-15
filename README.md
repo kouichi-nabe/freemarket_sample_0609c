@@ -183,3 +183,14 @@
 |------|----|-------|
 |provider|string|null: false|
 |uid|string|null: false|
+
+## cardsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|customer_id|string|null: false|
+|card_id|string|null: false|
+|user_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
