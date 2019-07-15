@@ -89,3 +89,8 @@ gem 'devise'
 gem 'active_hash'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'rails-i18n', '~> 5.1'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem "figaro"
+gem 'dotenv-rails'
