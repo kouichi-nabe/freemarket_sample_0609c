@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     get "sign_out", to: "users/sessions#destroy"
     post 'signup/sms_confirmation' => 'signups#sms_send'
   end
+  resources :purchases, only: :new
   resources :users, only: [:new, :index] do
     resources :cards, only: [:index, :new, :destroy, :show] do
       collection do
