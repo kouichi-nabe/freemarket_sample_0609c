@@ -15,6 +15,18 @@ class SignupsController < ApplicationController
   def complete
   end
 
+  def oauth_google
+    @user = User.new
+    @user.email = session["devise.google_data"]["info"]["unverified_email"]
+    @profile = @user.build_profile
+  end
+
+  def oauth_facebook
+    @user = User.new
+    @user.email = session["devise.facebook_data"]['info']['email']
+    @profile = @user.build_profile
+  end
+
   def sms_authenticate
     @profile=current_user.profile.assign_attributes(profile_params)
     if  current_user.profile.valid?(:sms_send)
