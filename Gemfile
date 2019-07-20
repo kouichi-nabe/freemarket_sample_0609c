@@ -49,6 +49,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
+  gem 'faker'
 end
 
 group :development do
@@ -73,6 +74,7 @@ group :test do
   gem 'pry-rails'
   gem 'erb2haml'
   gem "haml-rails"
+  gem 'faker'
 end
 
 group :production do
@@ -94,3 +96,6 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem "figaro"
 gem 'dotenv-rails'
+gem 'payjp'
+gem 'activerecord-import'
+gem 'gon'
