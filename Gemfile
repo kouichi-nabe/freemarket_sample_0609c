@@ -80,6 +80,10 @@ end
 group :production do
   gem 'unicorn', '5.4.1'
   gem "haml-rails"
+  gem 'payjp'
+  gem "recaptcha", require: "recaptcha/rails"
+  gem 'activerecord-import'
+  gem 'gon'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -99,3 +103,4 @@ gem 'dotenv-rails'
 gem 'payjp'
 gem 'activerecord-import'
 gem 'gon'
+gem 'gretel'
