@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'purchase/index'
   get 'logout/index'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -35,5 +36,16 @@ Rails.application.routes.draw do
     resources :user_profiles, only: [:new, :create, :edit, :update]
     resources :user_confirmations, only: [:create, :edit, :update]
     resources :logouts, only: :index
+  end
+  resources :cards, only: [:new, :show] do
+    collection do
+      post 'pay', to: 'cards#pay'
+    end
+  end
+
+  resources :purchase, only: [:index] do
+    collection do
+      post 'pay', to: 'purchase#pay'
+    end
   end
 end

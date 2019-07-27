@@ -25,4 +25,8 @@
     %p カード裏面の番号とは？
   #card_token
     %input{type: 'hidden', name: 'move_from_action', value: move_from_action}
+  - case local_assigns[:move_from_action]
+    - when 'add'
+      = submit_tag '追加する', id: 'token_submit', class:'credit_card redbtn'
+    - when 'new'
       = submit_tag '次へ進む', id: 'token_submit', class:'credit_card redbtn'

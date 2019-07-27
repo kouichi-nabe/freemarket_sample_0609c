@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
   has_one :card, dependent: :destroy
+  accepts_nested_attributes_for :card
   validates :password, presence: true, length: { minimum: 6 }, format: { with: /\A(?=.*?[a-z])[a-z\d]+\z/i }
   validates :password_confirmation, presence: true, length: { minimum: 6 }
   validates :nickname, presence: true
