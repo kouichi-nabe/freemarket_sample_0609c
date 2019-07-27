@@ -1,6 +1,15 @@
 body {
   background-color: #f5f5f5;
 }
+.l-left {
+  float: left;
+}
+.l-right {
+  float: right;
+}
+.bold {
+  font-weight: bold;
+}
 
 .sell-container {
   width: 700px;
@@ -13,12 +22,32 @@ body {
       padding: 32px 16px;
       font-size: 22px;
     }
+    border-top: 1px solid #eee;
 
     .sell-upload-box {
       padding: 40px;
-
       .sell-upload-head {
         font-size: 16px;
+      }
+      p {
+        margin: 8px 0 0;
+        line-height: 1.5;
+      }
+      .drop-box {
+        padding: 40px;
+        background-color: #f5f5f5;
+        border: 1px dashed #ccc;
+        text-align: center;
+        min-height: 162px;
+        position: relative;
+        pre {
+          position: absolute;
+          top: 37.5%;
+          left: 16px;
+          right: 16px;
+          font-size: 14px;
+          line-height: 1.5;
+        }
       }
     }
 
@@ -34,7 +63,141 @@ body {
 
     .sell-content {
       padding: 40px;
+      border-top: 1px solid #eee;
+      .form-question {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #0099e8;
+        color: #fff;
+        line-height: 14px;
+        font-size: 12px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .form-group:first-child {
+        margin: 0;
+      }
+      .form-group {
+        margin: 40px 0 0;
+        label {
+          font-weight: 600;
+        }
+        .input-default {
+          width: 100%;
+          margin: 8px 0 0;
+        }
+        .textarea-default {
+          display: block;
+          width: 100%;
+          max-width: 100%;
+          min-height: 104px;
+          margin: 8px 0 0;
+          padding: 10px;
+          border: 1px solid #ccc;
+          background: #fff;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        .has-error-text {
+          color: #ea352d;
+          line-height: 1.5;
+          font-size: 14px;
+          li {
+            margin: 8px 0 0;
+            padding: 0;
+          }
+        }
+        .select-wrap {
+          margin: 8px 0 0;
+          .select-default {
+            width: 100%;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            cursor: pointer;
+          }
+        }
+      }
+      h3.sell-sub-head {
+        float: left;
+        font-size: 14px;
+        color: #888;
+        font-weight: bold;
+      }
+      .sell-form-box {
+        float: right;
+        width: 400px;
+        .sell-price {
+          .l-left {
+            width: 50%;
+            line-height: 48px;
+          }
+          li:first-child {
+            padding: 0 0 24px;
+            border: 0;
+          }
+          li {
+            padding: 24px 0;
+            border-top: 1px solid #ccc;
+            .l-left {
+              width: 50%;
+              line-height: inherit;
+              .bold {
+                font-size: 16px;
+              }
+            }
+          }
+          .form-group {
+            .l-right {
+              width: 50%;
+            }
+            .has-error-text li {
+              padding: 0;
+              border: 0;
+            }
+            .sell-price-input {
+              text-align: right;
+              .input {
+                display: inline-block;
+                width: 80%;
+                margin: 0 0 0 5%;
+                .input-default {
+                  margin: 0;
+                  text-align: right;
+                }
+              }
+            }
+          }
+        }
+      }
+      .btn-default {
+        margin: 40px 0 0;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        cursor: pointer;
+        background-color: #ea352d;
+        color: white;
+      }
+      .btn-grey {
+        background-color: #aaa;
+        width: 45%;
+        margin: 24px auto;
+        text-align: center;
+      }
     }
-
   }
+}
+.bold .l-left {
+  font-size: 16px;
+}
+.bold .l-right {
+  font-size: 34px;
 }
