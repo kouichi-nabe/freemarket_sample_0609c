@@ -39,12 +39,12 @@
     a {
       color: $black_color;
     }
-  
+
     a:hover {
       text-decoration-line: underline;
       color: $dark_gray;
     }
-  
+
     .current {
       font-weight: bold;
     }
@@ -216,7 +216,7 @@
                   &__item {
                     display: none;
                     width: 224px;
-                    & > a {
+                    &__inner a {
                       padding: 8px 16px;
                       line-height: 14px;
                     }
