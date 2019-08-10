@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'purchase/index'
   get 'logout/index'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -6,6 +7,11 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
   root to: 'items#index'
+
+  get 'sell/child', to: 'categories#child'
+  get 'child', to: 'categories#child'
+  get 'sell/grand', to: 'categories#grand'
+  get 'grand', to: 'categories#grand'
 
   get "sell" => "exhibition#index"
   post "create" => "exhibition#create"
@@ -35,5 +41,16 @@ Rails.application.routes.draw do
     resources :user_profiles, only: [:new, :create, :edit, :update]
     resources :user_confirmations, only: [:create, :edit, :update]
     resources :logouts, only: :index
+  end
+  resources :cards, only: [:new, :show] do
+    collection do
+      post 'pay', to: 'cards#pay'
+    end
+  end
+
+  resources :purchase, only: [:index] do
+    collection do
+      post 'pay', to: 'purchase#pay'
+    end
   end
 end
