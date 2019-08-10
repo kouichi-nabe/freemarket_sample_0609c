@@ -9,30 +9,28 @@ class Item < ApplicationRecord
   # belongs_to は デフォルトでrequire: trueなのでoptional: true にする
   belongs_to :seller, class_name: "User", optional: true # validates :seller を設定しているのでoptional: trueは意味ない?
   belongs_to :buyer, class_name: "User", optional: true
-  # belongs_to :category, optional: true
-
+  belongs_to :category, optional: true
+  belongs_to :child_category, optional: true
+  belongs_to :grand_child_category, optional: true
   has_many :images, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
   has_one :buy_order
-
   accepts_nested_attributes_for :images, allow_destroy: true#, reject_if: :reject_image
-
-  #attribute :parent_category_id
-  #attribute :child_category_id
-  
-  with_options presence: true do # presence は中が空でないことの確認
+  with_options presence: true do
     validates :name
     validates :description
-    validates :category_id
     validates :condition
     validates :seller
     validates :postage
     validates :shipping_method
     validates :region
     validates :shipping_date
-    # validates :images
     validates :price, numericality: {only_integer: true, greater_than: 299, less_than: 10000000}
+    validates :images
+    validates :category_id
+    validates :child_categories_id
+    validates :grand_child_categories_id
   end
 end

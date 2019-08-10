@@ -104,3 +104,4 @@ gem 'payjp'
 gem 'activerecord-import'
 gem 'gon'
 gem 'gretel'
+gem "mechanize"

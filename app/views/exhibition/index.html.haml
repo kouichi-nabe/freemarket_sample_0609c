@@ -1,8 +1,8 @@
 .sell-container
   .sell-container-inner
     %h2 商品の情報を入力途中
-    = form_for @item,:url => {:action => :create} do |f| # TODO: 要修正
-          
+    = form_for @item, :url => {:action => :create} do |f| # TODO: 要修正
+
       .sell-upload-box
         %h3.sell-upload-head
           出品画像
@@ -11,7 +11,7 @@
         %p 最大10枚までアップロードできます
         = f.fields_for :images do |image_field| # 複数画像
           = image_field.file_field :image
-          
+
         .drop-box
           %pre.visible-pc
             ドラッグアンドドロップ
@@ -31,8 +31,7 @@
             %span.form-require
               必須
           %div
-          = f.text_area :description, class: 'textarea-default',
-          placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。', rows: '5'
+          = f.text_area :description, class: 'textarea-default', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。', rows: '5'
 
       .sell-content.clearfix
         %h3.sell-sub-head
@@ -59,7 +58,9 @@
               必須
             %dev
               %div.select-wrap
-                = f.select :category_id, [["Tシャツ/カットソー(半袖/袖なし)", 1]], {prompt: "---"}, class: 'select-default'
+                = f.select :category_id, [["---", ""],*@categories], class: "category-select"
+                .child-category-select
+                .grand-child-category-select
           .form-group
             %label
             商品の状態

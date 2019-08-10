@@ -18,16 +18,11 @@
             %ul.nav-list-parent
               %li.nav-list-parent__item
                 %h3
-                  = link_to root_path do
-                    レディース
+                  = render partial: 'layouts/categories_link', collection: @categories_list, as: 'ele'
                 %ul.nav-list-child
                   %li.nav-list-child__item
-                    = link_to root_path do
-                      トップス
+                    .nav-list-child__item__inner
                     %ul.nav-list-grand-child
-                      %li.nav-list-grand-child__item
-                        = link_to root_path do
-                          Tシャツ/カットソー(半袖/袖なし)
           %li
             %h2
               = link_to root_path, class: 'nav-root-list-parent' do

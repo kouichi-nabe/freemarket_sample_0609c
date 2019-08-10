@@ -6,6 +6,11 @@ class ExhibitionController < ApplicationController
     @item = Item.new
     2.times { @item.images.build } # Itemにひもづくimageを2つ生成
                                    # accepts_nested_attributes_for :imagesがItemに必要?
+    categories = Category.all
+    @categories = []
+    categories.each do |c|
+      @categories << [c.name, c.id]
+    end
   end
 
   def create
