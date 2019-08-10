@@ -6,17 +6,23 @@ class Item < ApplicationRecord
   enum region: {hokkaido: 0, aomori: 1, iwate: 2, miyagi: 3, akita: 4,yamagata: 5,fukushima: 6,ibaraki: 7,tochigi: 8,gunma: 9,saitama: 10,chiba: 11,tokyo: 12,kanagawa: 13,nigata: 14,toyama: 15,ishikawa: 16,fukui: 17,yamanashi: 18,nagano: 19,gifu: 20,sizuoka: 21,aichi: 22,mie: 23,shiga: 24,kyoto: 25,osaka: 26,hyogo: 27,nara: 28,wakayama: 29,tottori: 30,shimane: 31,okayama: 32,hiroshima: 33,yamaguchi: 34,tokushima: 35,kagawa: 36,ehime: 37,kochi: 38,fukuoka: 39,saga: 40,nagasaki: 41,kumamoto: 42,oita: 43,miyazaki: 44,kagoshima: 45,okinawa: 46}
   enum shipping_date: {two: 1, three: 2, seven: 3}
 
-  belongs_to :seller, class_name: "User", optional: true
+  # belongs_to は デフォルトでrequire: trueなのでoptional: true にする
+  belongs_to :seller, class_name: "User", optional: true # validates :seller を設定しているのでoptional: trueは意味ない?
   belongs_to :buyer, class_name: "User", optional: true
-  belongs_to :category, optional: true
+  # belongs_to :category, optional: true
+
   has_many :images, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
+
   has_one :buy_order
-  accepts_nested_attributes_for :images, allow_destroy: true, reject_if: :reject_image
-  attribute :parent_category_id
-  attribute :child_category_id
-  with_options presence: true do
+
+  accepts_nested_attributes_for :images, allow_destroy: true#, reject_if: :reject_image
+
+  #attribute :parent_category_id
+  #attribute :child_category_id
+  
+  with_options presence: true do # presence は中が空でないことの確認
     validates :name
     validates :description
     validates :category_id
@@ -26,7 +32,7 @@ class Item < ApplicationRecord
     validates :shipping_method
     validates :region
     validates :shipping_date
-    validates :images
+    # validates :images
+    validates :price, numericality: {only_integer: true, greater_than: 299, less_than: 10000000}
   end
-  validates :price, presence: true, numericality: {only_integer: true, greater_than: 299, less_than: 10000000}
 end
