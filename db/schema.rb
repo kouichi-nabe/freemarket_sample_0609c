@@ -97,7 +97,6 @@ ActiveRecord::Schema.define(version: 2019_07_30_050807) do
     t.bigint "buyer_id"
     t.bigint "seller_id"
     t.string "brand"
-    t.bigint "category_id", null: false
     t.integer "size"
     t.integer "price", null: false
     t.integer "postage", null: false
@@ -108,6 +107,7 @@ ActiveRecord::Schema.define(version: 2019_07_30_050807) do
     t.integer "receive_completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
     t.bigint "child_categories_id"
     t.bigint "grand_child_categories_id"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
@@ -115,7 +115,6 @@ ActiveRecord::Schema.define(version: 2019_07_30_050807) do
     t.index ["child_categories_id"], name: "index_items_on_child_categories_id"
     t.index ["grand_child_categories_id"], name: "index_items_on_grand_child_categories_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
-    t.index ["top_category_id"], name: "index_items_on_top_category_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -191,9 +190,6 @@ ActiveRecord::Schema.define(version: 2019_07_30_050807) do
   add_foreign_key "comments", "users"
   add_foreign_key "grand_child_categories", "child_categories", column: "child_categories_id"
   add_foreign_key "images", "items"
-  add_foreign_key "items", "categories"
-  add_foreign_key "items", "categories", column: "parent_category_id"
-  add_foreign_key "items", "categories", column: "top_category_id"
   add_foreign_key "likes", "items"
   add_foreign_key "likes", "users"
   add_foreign_key "messages", "items"

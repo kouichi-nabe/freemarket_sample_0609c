@@ -44,20 +44,6 @@
               必須
             %dev
               %div.select-wrap
-                = f.select :top_category_id, [["レディース", "レディース"], ["メンズ", "メンズ"]], {prompt: "---"}, class: 'select-default'
-            %label
-              カテゴリー
-            %span.form-require
-              必須
-            %dev
-              %div.select-wrap
-                = f.select :parent_category_id, [["トップス", "トップス"]], {prompt: "---"}, class: 'select-default'
-            %label
-              カテゴリー
-            %span.form-require
-              必須
-            %dev
-              %div.select-wrap
                 = f.select :category_id, [["---", ""],*@categories], class: "category-select"
                 .child-category-select
                 .grand-child-category-select
