@@ -71,23 +71,18 @@
         position: relative;
         background: $white_color;
 
-        .select-tag {
-          width: 100%;
-          position: relative;
-          z-index: 2;
-          height: 48px;
-          padding: 0 16px;
-          border-radius: 4px;
-          border: 1px solid $fa_icon_gray;
-          font-size: 16px;
-          line-height: 1.5;
-          cursor: pointer;
-          background: $white_color;
-        }
         select{
           -webkit-appearance: none;
           -moz-appearance: none;
-          appearance: none;   
+          appearance: none;
+          width: 94%;
+          margin: 8px 0 0;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #b6b6b6;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;  
         }
 
         .fa-icon {
@@ -98,6 +93,8 @@
           color: $fa_icon_gray;
           font-size: 16px;
           transform: translate(0, -50%);
+          padding-right: 30px;
+          padding-top: 5px;
         }
       }
     }
