@@ -19,20 +19,28 @@ class ExhibitionController < ApplicationController
     puts 'create called'
     puts ''
     puts ''
+    puts ''
+    puts ''
+    puts params
+    puts ''
+    puts ''
 
     current_user.id
     # TODO: itemに紐づいていないものはどうしようか?
     params = params_int(item_params)
     params[:seller_id] = current_user.id
     params[:postage] = 1 # todo
-    Category.create(name: "レディース")
+
+    puts params
+
+    # Category.create(name: "レディース")
     @item = Item.new(params)
     @item.save! # DBに保存バリデーションに引っかかる場合例外
   end
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :category_id, :condition, :size, :brand, :shipping_method, :region, :shipping_date, :price,images_attributes: [:image])
+    params.require(:item).permit(:name, :description, :category_id, :child_categories_id, :grand_child_categories_id, :condition, :size, :brand, :shipping_method, :region, :shipping_date, :price,images_attributes: [:image])
   end
 
   def params_int(model_params)
