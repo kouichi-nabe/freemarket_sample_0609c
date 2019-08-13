@@ -1,0 +1,15 @@
+.mypage-default
+  .mypage-default__wrapper.clearfix
+    .user_mypage__container__edit
+      .user_mypage__container__edit__title
+        %h2 プロフィール
+      .user_mypage__container__edit__editform
+        .user_mypage__container__edit__editform__name
+          %figure
+            = image_tag "jcb-logo.svg", width: "60", height: "60"
+          %input{type: "text", name: "nickname", class: "user_mypage__container__edit__editform__name__inputbox"}
+        .user_mypage__container__edit__editform__content
+          %textarea{name: "profile_comment", placeholder: "こんにちは！"}
+          %button{type: "submit", class: "user_mypage__container__edit__editform__content__submit redbtn"} 変更する
+
+    =render partial: "users/user_sidebar"
