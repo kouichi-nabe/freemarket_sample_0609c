@@ -48,14 +48,6 @@ ActiveRecord::Schema.define(version: 2019_06_27_132510) do
     t.index ["seller_id"], name: "index_buy_orders_on_seller_id"
   end
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.bigint "parent_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["parent_id"], name: "index_categories_on_parent_id"
-  end
-
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id", null: false
     t.bigint "user_id", null: false
@@ -80,7 +72,6 @@ ActiveRecord::Schema.define(version: 2019_06_27_132510) do
     t.bigint "buyer_id"
     t.bigint "seller_id"
     t.string "brand"
-    t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "size"
@@ -92,7 +83,6 @@ ActiveRecord::Schema.define(version: 2019_06_27_132510) do
     t.integer "condition", null: false
     t.integer "receive_completed"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
-    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
   end
 
@@ -153,7 +143,6 @@ ActiveRecord::Schema.define(version: 2019_06_27_132510) do
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "items"
-  add_foreign_key "items", "categories"
   add_foreign_key "likes", "items"
   add_foreign_key "likes", "users"
   add_foreign_key "messages", "items"
