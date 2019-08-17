@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   get 'sell/grand', to: 'categories#grand'
   get 'grand', to: 'categories#grand'
 
-  get "sell" => "exhibition#index"
-  post "create" => "exhibition#create"
+  get "sell" => "exhibition#index"     # 出品入力画面
+  post "create" => "exhibition#create" # 出品
 
   get 'signups/address' , to: 'signups#address'
   get 'signups/complete' , to: 'signups#complete'
