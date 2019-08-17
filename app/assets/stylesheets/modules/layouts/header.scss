@@ -194,6 +194,13 @@
               &__item {
                 display: none;
                 width: 224px;
+                &:hover {
+                  background-color: $main_color;
+                }
+                &:hover h3 a {
+                  opacity: 1;
+                  color: $white_color;
+                }
                 &:hover .nav-list-child__item {
                   display: block;
                 }
@@ -203,6 +210,7 @@
                   a {
                     padding: 0 16px;
                     line-height: 44px;
+                    text-decoration: none;
                   }
                 }
                 .nav-list-child {
@@ -216,6 +224,13 @@
                   &__item {
                     display: none;
                     width: 224px;
+                    &:hover {
+                      background-color: $back_color;
+                    }
+                    &:hover a {
+                      opacity: 1;
+                      text-decoration: none;
+                    }
                     &__inner a {
                       padding: 8px 16px;
                       line-height: 14px;
@@ -231,6 +246,13 @@
                       .nav-list-grand-child__item {
                         display: none;
                         width: 320px;
+                        &:hover {
+                          background-color: $back_color;
+                        }
+                        &:hover a {
+                          opacity: 1;
+                          text-decoration: none;
+                        }
                         & > a {
                           padding: 8px 16px;
                           line-height: 14px;
