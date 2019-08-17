@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   }
   root to: 'items#index'
 
+  get "itemdetail", to: "itemdetails#index"
+
   get 'sell/child', to: 'categories#child'
   get 'child', to: 'categories#child'
   get 'sell/grand', to: 'categories#grand'
