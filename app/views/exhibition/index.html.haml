@@ -1,0 +1,145 @@
+.sell-container
+  .sell-container-inner
+    %h2 商品の情報を入力途中
+    = form_for @item, :url => {:action => :create} do |f| # TODO: 要修正
+
+      .sell-upload-box
+        %h3.sell-upload-head
+          出品画像
+          %span.form-require
+            必須
+        %p 最大10枚までアップロードできます
+        = f.fields_for :images do |image_field| # 複数画像
+          = image_field.file_field :image
+
+        .drop-box
+          %pre.visible-pc
+            ドラッグアンドドロップ
+            またはクリックしてファイルをアップロード
+
+      .sell-content
+        .form-group
+          %label
+            商品名
+            %span.form-require
+              必須
+          %div
+            = f.text_field :name, class: 'input-default', placeholder: '商品名（必須 40文字まで)'
+        .form-group
+          %label
+            商品の説明
+            %span.form-require
+              必須
+          %div
+          = f.text_area :description, class: 'textarea-default', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。', rows: '5'
+
+      .sell-content.clearfix
+        %h3.sell-sub-head
+          商品の詳細
+        .sell-form-box
+          .form-group
+            %label
+              カテゴリー
+            %span.form-require
+              必須
+            %dev
+              %div.select-wrap
+                = f.select :category_id, [["---", ""],*@categories], class: "category-select"
+                .child-category-select
+                .grand-child-category-select
+          .form-group
+            %label
+            商品の状態
+            %span.form-require
+              必須
+            %div
+              %div.select-wrap
+                = f.select :condition, [["新品、未使用", 1]], {prompt: "---"}, class: 'select-default'
+          .form-group
+            %label
+            サイズ
+            %span.form-require
+              必須
+            %div
+              %div.select-wrap
+                = f.select :size, [["S", 1], ["M", 2], ["L", 3]], {prompt: "---"}, class: 'select-default'
+          .form-group
+            %label
+            ブランド
+            %span.form-require
+              任意
+            %div
+              // TODO: インクリメンタルサーチ
+              = f.text_field :brand, class: 'input-default', placeholder: '例）シャネル'
+            %ul.has-error-text
+              %li 選択してください
+
+      .sell-content.clearfix
+        %h3.sell-sub-head
+          配送について
+        %a.form-question ?
+        .sell-form-box
+          .form-group
+            %label
+              配送料の負担
+              %span.form-require
+                必須
+            %div
+              .select-wrap
+                = f.select :shipping_method, [["送料込み(出品者負担)", 1], ["着払い(購入者負担)", 2]], {prompt: "---"}, class: 'select-default'
+            %ul.has-error-text
+              %li 選択してください
+          .form-group
+            %label
+              発送元の地域
+              %span.form-require
+                必須
+            %div
+              .select-wrap
+                = f.select :region, [["東京", 1]], {prompt: "---"}, class: 'select-default'
+            %ul.has-error-text
+              %li 選択してください
+          .form-group
+            %label
+              発送までの日数
+              %span.form-require
+                必須
+            %div
+              .select-wrap
+                = f.select :shipping_date, [["1~2日で発送", 1], ["3~4日で発送", 2], ["34~7日で発送", 3]], {prompt: "---"}, class: 'select-default'
+            %ul.has-error-text
+              %li 選択してください
+
+      .sell-content.clearfix
+        %h3.sell-sub-head
+          販売価格(300〜9,999,999)
+        %a.form-question ?
+        .sell-form-box
+          %ul.sell-price
+            %li.form-group
+              .clearfix
+                %label.l-left
+                  価格
+                  %span.form-require
+                    必須
+                .sell-price-input.l-right
+                  ¥
+                  %div.input
+                    = f.text_field :price, class: 'input-default', placeholder: '例）300'
+              %ul.has-error-text
+                %li 300以上9999999以下で入力してください
+            %li.clearfix
+              .l-left
+                販売手数料 (10%)
+              .l-right -
+            %li.clear-fix.bold
+              .l-left
+                販売利益
+              .l-right -
+      .sell-content
+        %div
+          %p 禁止されている出品、行為を必ずご確認ください。
+          %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+          %p また、出品をもちまして加盟店規約に同意したことになります。
+        = f.submit "登録する", class: 'btn-default'
+        %a.btn-default.btn-grey もどる

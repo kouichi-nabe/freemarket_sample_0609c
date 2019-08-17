@@ -1,0 +1,18 @@
+%header
+  = link_to(root_path) do
+    = image_tag "logo.svg", width:  "234", height: "76", class: "header__logo-img_signup"
+  = image_tag 'signup_header5.png',size: "680x90" , class: "header__bar-img"
+.signup-complete
+  .signup__title
+    %h2 会員登録完了
+    .signup__info-container
+      .description
+        %span.thanks ありがとうございます。
+        %br
+        %span.complete 会員登録が完了しました。
+        %br/
+      .clearfix
+    = link_to "メルカリをはじめる",root_path, class:'start-btn'
+    .clearfix
+    = image_tag 'register_complete_img.png',size: "800x220", class: "register_complete_img"
+= render partial:'items/item_footer'

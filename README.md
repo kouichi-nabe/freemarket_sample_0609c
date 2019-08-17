@@ -30,6 +30,12 @@
 |first_name_kana|sring|null: false|
 |last_name_kana|sring|null: false|
 |image|string|null: false|
+|postalcode|string|
+|prefecture|string|
+|city|string|
+|street_number|string|
+|building|string|
+|phone_number|string|
 |self_introduction|text||
 
 
@@ -42,7 +48,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |post_code|string|null: false|
-|prefecture|sring|null: false|
+|prefecture|integer|null: false|
 |municipality|sring|null: false|
 |house_number|string|null: false|
 |phone_number|integer|
@@ -170,3 +176,21 @@
 - belongs_to :category
 - belongs_to :parent, class_name: :Brand, optional: true
 - has_many :children, class_name: :Brand, foregin_key::parent_id
+
+## sns_credentialsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|provider|string|null: false|
+|uid|string|null: false|
+
+## cardsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|customer_id|string|null: false|
+|card_id|string|null: false|
+|user_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user

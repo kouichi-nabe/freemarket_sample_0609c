@@ -52,6 +52,9 @@ a:hover {
         @include mq(md) {
           font-size: 22px;
         }
+        a {
+          color: $link_color;
+        }
       }
       .items-box-content {
         margin: 0 auto;
@@ -162,6 +165,9 @@ a:hover {
         @include mq(md) {
           padding: 20px 0 30px;
           width: 99.5%;
+        }
+        a {
+          color: $link_color;
         }
       }
     }

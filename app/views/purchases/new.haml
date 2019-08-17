@@ -1,0 +1,60 @@
+.item_wrapper
+  %header
+    = image_tag 'mercari_logo_horizontal.png',size: "234x76" , class: "header__logo-img"
+  .item
+    .item__title
+      購入内容の確認
+    .item__info
+      .item__info__inner-content
+        .item__info__inner-content__image
+          = image_tag 'mercari_profile.png', height: '148', width: '148'
+        .item__info__inner-content__name
+          メルカリ
+          //仮置き
+        .item__info__inner-content__subtotal
+          .item__info__inner-content__subtotal__price
+            ¥1,980
+            //仮置き
+          .item__info__inner-content__subtotal__delivery-fee
+            %p 送料込み
+            //仮置き
+        .item__info__inner-content__point
+          ポイントはありません
+        .item__info__inner-content__account
+          .item__info__inner-content__account__text
+            支払い金額
+          .item__info__inner-content__account__price
+            %p ¥ 1,980
+            //仮置き
+
+        = form_tag(pay_purchase_index_path(@item), method: :post) do
+          = submit_tag "購入する", class: 'item__info__inner-content__purchase-btn'
+    .item__address
+      .item__address__inner-content
+        .item__address__inner-content__heading
+          配送先
+        .item__address__inner-content__info
+          .item__address__inner-content__info__text
+            〒123-4567
+            %br
+            東京都 台東区浅草 1-2-3
+            %br
+            山田 太郎
+          .item__address__inner-content__info__fix
+            変更する
+            %i >
+    .item__payment
+      .item__payment__inner-content
+        .item__payment__inner-content__heading
+          支払い方法
+        .item__payment__inner-content__info
+          .item__payment__inner-content__info__text
+            ************1234
+            %br
+            01 / 25
+          .item__payment__inner-content__info__figure
+            = image_tag 'jcb-logo.svg',size: "26x20" , class: "credit__logo-img"
+          .item__payment__inner-content__info__fix
+            変更する
+            %i >
+  = render 'items/item_footer' 
