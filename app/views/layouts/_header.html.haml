@@ -6,14 +6,14 @@
           = image_tag "merukari.svg"
       %form.header__top__form{action: ""}
         %input.input-default{name: "keyword", placeholder: "何かお探しですか?", type: "search"}/
-        %i.fa.fa-search{"aria-hidden": "true"}
+        =fa_icon("search")
     .header__nav-box.clearfix
       .left-nav
         %ul.left-nav__list
           %li
             %h2
               = link_to root_path, class: 'nav-root-list-parent' do
-                %i.fa.fa-list{"aria-hidden": "true"}
+                =fa_icon("list")
                 %span カテゴリーから探す
             %ul.nav-list-parent
               %li.nav-list-parent__item
@@ -42,11 +42,11 @@
         %ul.user-nav
           %li.user-nav__item
             = link_to root_path, class: 'user-nav__item__link' do
-              %i.fa.fa-heart-o{"aria-hidden": "true"}
+              =fa_icon("heart-o")
               %span いいね！一覧
           %li.user-nav__item
             = link_to root_path, class: 'user-nav__item__link' do
-              %i.fa.fa-bell-o{"aria-hidden": "true"}
+              =fa_icon("bell-o")
               %span お知らせ
               .user-nav__item__link__count
                 7
@@ -59,12 +59,12 @@
                     .mypage-item-link__body__text
                       「ファミチキ」「からあげクン」「ななチキなどの揚げ物」が"¥11〜"で買えるクーポン配信中！
                     .mypage-item-link__body__time
-                      %i.fa.fa-clock-o{"aria-hidden": "true"}
+                      =fa_icon("clock-o")
                       %span#news-time 8時間前
                   %i.fa.fa-arrow-right{"aria-hidden": "true"}
           %li.user-nav__item
             = link_to root_path, class: 'user-nav__item__link' do
-              %i.fa.fa-check{"aria-hidden": "true"}
+              =fa_icon("check")
               %span やることリスト
             %ul.user-nav__item__box.mypage-item-list
               %li
@@ -75,9 +75,9 @@
                     .mypage-item-link__body__text
                       ○○○○さんから「〜〜〜」の取引メッセージがあります。返信をお願いします
                     .mypage-item-link__body__time
-                      %i.fa.fa-clock-o{"aria-hidden": "true"}
+                      =fa_icon("clock-o")
                       %span#news-time 2時間前
-                  %i.fa.fa-arrow-right{"aria-hidden": "true"}
+                  =fa_icon("arrow-right")
           %li.user-nav__item
             = link_to root_path, class: 'user-nav__item__link' do
               %figure>
@@ -105,36 +105,36 @@
                         売上金
                       .mypage-sales-point-link__right
                         ¥0
-                        %i.fa.fa-arrow-right{"aria-hidden": "true"}
+                        =fa_icon("arrow-right")
                   %li
                     = link_to root_path, class: 'mypage-sales-point-link clearfix' do
                       .mypage-sales-point-link__left
                         ポイント
                       .mypage-sales-point-link__right
                         P 0
-                        %i.fa.fa-arrow-right{"aria-hidden": "true"}
+                        =fa_icon("arrow-right")
               %ul.mypage-nav-list
                 %li
                   = link_to root_path, class: 'mypage-nav-list-link' do
                     いいね!一覧
-                    %i.fa.fa-arrow-right{"aria-hidden": "true"}
+                    =fa_icon("arrow-right")
                 %li
                   = link_to root_path, class: 'mypage-nav-list-link' do
                     出品した商品 - 出品中
-                    %i.fa.fa-arrow-right{"aria-hidden": "true"}
+                    =fa_icon("arrow-right")
                 %li
                   = link_to root_path, class: 'mypage-nav-list-link' do
                     出品した商品 - 取引中
-                    %i.fa.fa-arrow-right{"aria-hidden": "true"}
+                    =fa_icon("arrow-right")
                 %li
                   = link_to root_path, class: 'mypage-nav-list-link' do
                     出品した商品 - 売却済み
-                    %i.fa.fa-arrow-right{"aria-hidden": "true"}
+                    =fa_icon("arrow-right")
                 %li
                   = link_to root_path, class: 'mypage-nav-list-link' do
                     購入した商品 - 取引中
-                    %i.fa.fa-arrow-right{"aria-hidden": "true"}
+                    =fa_icon("arrow-right")
                 %li
                   = link_to root_path, class: 'mypage-nav-list-link' do
                     購入した商品 - 過去の取引
-                    %i.fa.fa-arrow-right{"aria-hidden": "true"}
+                    =fa_icon("arrow-right")
