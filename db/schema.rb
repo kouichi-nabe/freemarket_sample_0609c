@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_06_123523) do
+ActiveRecord::Schema.define(version: 2019_07_30_050807) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "post_code", null: false
@@ -58,11 +58,13 @@ ActiveRecord::Schema.define(version: 2019_07_06_123523) do
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.bigint "parent_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["parent_id"], name: "index_categories_on_parent_id"
+    t.string "name"
+  end
+
+  create_table "child_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.bigint "categories_id", null: false
+    t.index ["categories_id"], name: "index_child_categories_on_categories_id"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -73,6 +75,12 @@ ActiveRecord::Schema.define(version: 2019_07_06_123523) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_comments_on_item_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "grand_child_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.bigint "child_categories_id", null: false
+    t.index ["child_categories_id"], name: "index_grand_child_categories_on_child_categories_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -89,7 +97,6 @@ ActiveRecord::Schema.define(version: 2019_07_06_123523) do
     t.bigint "buyer_id"
     t.bigint "seller_id"
     t.string "brand"
-    t.bigint "category_id", null: false
     t.integer "size"
     t.integer "price", null: false
     t.integer "postage", null: false
@@ -100,8 +107,13 @@ ActiveRecord::Schema.define(version: 2019_07_06_123523) do
     t.integer "receive_completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.bigint "child_categories_id"
+    t.bigint "grand_child_categories_id"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["child_categories_id"], name: "index_items_on_child_categories_id"
+    t.index ["grand_child_categories_id"], name: "index_items_on_grand_child_categories_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
   end
 
@@ -140,6 +152,13 @@ ActiveRecord::Schema.define(version: 2019_07_06_123523) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "rate", null: false
     t.bigint "user_id", null: false
@@ -166,10 +185,11 @@ ActiveRecord::Schema.define(version: 2019_07_06_123523) do
 
   add_foreign_key "buy_orders", "items"
   add_foreign_key "cards", "users"
+  add_foreign_key "child_categories", "categories", column: "categories_id"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
+  add_foreign_key "grand_child_categories", "child_categories", column: "child_categories_id"
   add_foreign_key "images", "items"
-  add_foreign_key "items", "categories"
   add_foreign_key "likes", "items"
   add_foreign_key "likes", "users"
   add_foreign_key "messages", "items"

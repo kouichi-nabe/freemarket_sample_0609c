@@ -18,16 +18,11 @@
             %ul.nav-list-parent
               %li.nav-list-parent__item
                 %h3
-                  = link_to root_path do
-                    レディース
+                  = render partial: 'layouts/categories_link', collection: @categories_list, as: 'ele'
                 %ul.nav-list-child
                   %li.nav-list-child__item
-                    = link_to root_path do
-                      トップス
+                    .nav-list-child__item__inner
                     %ul.nav-list-grand-child
-                      %li.nav-list-grand-child__item
-                        = link_to root_path do
-                          Tシャツ/カットソー(半袖/袖なし)
           %li
             %h2
               = link_to root_path, class: 'nav-root-list-parent' do
@@ -124,6 +119,44 @@
                       出品した商品 - 出品中
                       %i.fa.fa-arrow-right{"aria-hidden": "true"}
                   %li
+                    = link_to root_path, class: 'mypage-sales-point-link clearfix' do
+                      .mypage-sales-point-link__left
+                        売上金
+                      .mypage-sales-point-link__right
+                        ¥0
+                        =fa_icon("arrow-right")
+                  %li
+                    = link_to root_path, class: 'mypage-sales-point-link clearfix' do
+                      .mypage-sales-point-link__left
+                        ポイント
+                      .mypage-sales-point-link__right
+                        P 0
+                        =fa_icon("arrow-right")
+              %ul.mypage-nav-list
+                %li
+                  = link_to root_path, class: 'mypage-nav-list-link' do
+                    いいね!一覧
+                    =fa_icon("arrow-right")
+                %li
+                  = link_to root_path, class: 'mypage-nav-list-link' do
+                    出品した商品 - 出品中
+                    =fa_icon("arrow-right")
+                %li
+                  = link_to root_path, class: 'mypage-nav-list-link' do
+                    出品した商品 - 取引中
+                    =fa_icon("arrow-right")
+                %li
+                  = link_to root_path, class: 'mypage-nav-list-link' do
+                    出品した商品 - 売却済み
+                    =fa_icon("arrow-right")
+                %li
+                  = link_to root_path, class: 'mypage-nav-list-link' do
+                    購入した商品 - 取引中
+                    =fa_icon("arrow-right")
+                %li
+                  = link_to root_path, class: 'mypage-nav-list-link' do
+                    購入した商品 - 過去の取引
+                    =fa_icon("arrow-right")
                     = link_to root_path, class: 'mypage-nav-list-link' do
                       出品した商品 - 取引中
                       %i.fa.fa-arrow-right{"aria-hidden": "true"}
@@ -146,3 +179,4 @@
             = link_to new_user_session_path, class: 'menu__signin bluebtn' do
               %li
                 ログイン
+  = breadcrumbs separator: " &rsaquo; "

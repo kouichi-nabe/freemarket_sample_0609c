@@ -23,18 +23,22 @@
           .required__icon 必須
         .clearfix
         = f.email_field :email,{ class: 'text_field', placeholder: "PC・携帯どちらでも可"}
-        %li
-          %h3 パスワード
-        %li
-          .required__icon 必須
-        .clearfix
-        = f.password_field :password,{ class: 'text_field', placeholder: "6文字以上",autocomplete: "off"}
-        %li
-          %h3 パスワード（確認）
-        %li
-          .required__icon 必須
-        .clearfix
-        = f.password_field :password_confirmation,{ class: 'text_field', placeholder: "6文字以上",autocomplete: "off"}
+        -if session["devise.facebook_data"] || session["devise.google_data"]
+          = f.hidden_field :password, value: password=Devise.friendly_token[0,20]
+          = f.hidden_field :password_confirmation, value: password
+        -else
+          %li
+            %h3 パスワード
+          %li
+            .required__icon 必須
+          .clearfix
+          = f.password_field :password,{ class: 'text_field', placeholder: "6文字以上",autocomplete: "off"}
+          %li
+            %h3 パスワード（確認）
+          %li
+            .required__icon 必須
+          .clearfix
+          = f.password_field :password_confirmation,{ class: 'text_field', placeholder: "6文字以上",autocomplete: "off"}
         %li
           %h3 本人確認
         .clearfix

@@ -27,6 +27,28 @@
   // @include mq(md) {
   //   display: block;
   // }
+  .breadcrumbs {
+    height: 48px;
+    line-height: 48px;
+    background-color: $white_color;
+    border-top: solid 1px $border_gray;
+    box-shadow: 0 3px 3px $shadow_black;
+    position: relative;
+    padding: 0 200px;
+    width:100%;
+    a {
+      color: $black_color;
+    }
+
+    a:hover {
+      text-decoration-line: underline;
+      color: $dark_gray;
+    }
+
+    .current {
+      font-weight: bold;
+    }
+  }
   &__logo-img_signup {
     display: block;
     float: left;
@@ -172,6 +194,13 @@
               &__item {
                 display: none;
                 width: 224px;
+                &:hover {
+                  background-color: $main_color;
+                }
+                &:hover h3 a {
+                  opacity: 1;
+                  color: $white_color;
+                }
                 &:hover .nav-list-child__item {
                   display: block;
                 }
@@ -181,6 +210,7 @@
                   a {
                     padding: 0 16px;
                     line-height: 44px;
+                    text-decoration: none;
                   }
                 }
                 .nav-list-child {
@@ -194,7 +224,14 @@
                   &__item {
                     display: none;
                     width: 224px;
-                    & > a {
+                    &:hover {
+                      background-color: $back_color;
+                    }
+                    &:hover a {
+                      opacity: 1;
+                      text-decoration: none;
+                    }
+                    &__inner a {
                       padding: 8px 16px;
                       line-height: 14px;
                     }
@@ -209,6 +246,13 @@
                       .nav-list-grand-child__item {
                         display: none;
                         width: 320px;
+                        &:hover {
+                          background-color: $back_color;
+                        }
+                        &:hover a {
+                          opacity: 1;
+                          text-decoration: none;
+                        }
                         & > a {
                           padding: 8px 16px;
                           line-height: 14px;

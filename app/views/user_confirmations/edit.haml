@@ -1,0 +1,55 @@
+.mypage-default
+  .mypage-default__wrapper.clearfix
+    .user_mypage__container__edit
+      .user_mypage__container__edit__title
+        %h2 本人情報の登録
+      .user_mypage__container__edit__form
+        .user_mypage__container__edit__form__description
+          %p
+            お客さまの本人情報をご登録ください。
+            %br
+            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          %p.user_mypage__container__edit__form__description__text-right
+            =link_to "#", class: "user_mypage__container__edit__form__description__text-right__link"do
+              本人確認書類のアップロードについて
+              %i.fas.fa-chevron-right
+        .user_mypage__container__edit__form__list
+          %label お名前
+          %p 山田 太郎
+        .user_mypage__container__edit__form__list
+          %label お名前カナ
+          %p ヤマダ タロウ
+        .user_mypage__container__edit__form__list
+          %label 生年月日
+          %p 1987/05/31
+        .user_mypage__container__edit__form__list
+          %label 郵便番号
+          %span 任意
+          %input{type: "text",name: "postalcode", placeholder: "例） 1234567"}
+        = form_for '' do |f|
+          .user_mypage__container__edit__form__list
+            %label 都道府県
+            %span 任意
+            .user_mypage__container__edit__form__list__selectwrap
+              = f.collection_select( :prefecture, Prefecture.all, :id, :name)
+              = fa_icon 'chevron-down', class: 'fa-icon'
+          .user_mypage__container__edit__form__list
+            %label 市区町村
+            %span 任意
+            %input{type: "text", placeholder: "例） 横浜市中区"}
+          .user_mypage__container__edit__form__list
+            %label 番地
+            %span 任意
+            %input{type: "text", placeholder: "例） 芝1-1-1"}
+          .user_mypage__container__edit__form__list
+            %label 建物名
+            %span 任意
+            %input{type: "text", placeholder: "例） 芝ビル103"}
+          %button{type: "submit", class: "user_mypage__container__edit__form__button redbtn"} 登録する
+          .user_mypage__container__edit__form__about-registration
+            %p
+              =link_to "#", class: "user_mypage__container__edit__form__about-registration__link" do
+                本人情報の登録について
+                %i.fas.fa-chevron-right
+
+    =render partial: "users/user_sidebar"
