@@ -71,7 +71,7 @@
     %h3.mypage-nav__head 設定
     %ul.mypage-nav__list
       %li.mypage-nav__item
-        = link_to edit_user_user_profile_path(current_user), class: 'mypage-nav__item__link' do
+        = link_to "/users/1/user_profiles/1/edit", class: 'mypage-nav__item__link' do
           プロフィール
           %i.fa.fa-arrow-right{"aria-hidden": "true"}
       %li.mypage-nav__item
@@ -87,7 +87,7 @@
           メール/パスワード
           %i.fa.fa-arrow-right{"aria-hidden": "true"}
       %li.mypage-nav__item
-        = link_to edit_user_user_confirmation_path(current_user), class: 'mypage-nav__item__link' do
+        = link_to "/users/1/user_confirmations/1/edit", class: 'mypage-nav__item__link' do
           本人情報
           %i.fa.fa-arrow-right{"aria-hidden": "true"}
       %li.mypage-nav__item
