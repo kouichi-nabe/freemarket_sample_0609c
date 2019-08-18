@@ -103,7 +103,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem "figaro"
 gem 'dotenv-rails'
-gem 'payjp'
+# gem 'payjp'
 gem 'activerecord-import'
 gem 'gon'
 gem 'gretel'
