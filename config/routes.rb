@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   }
   root to: 'items#index'
 
-  get "itemdetail", to: "itemdetails#index"
+  # get "itemdetails", to: "itemdetails#index"
+  resources :itemdetails, only: [:index, :show]
 
   get 'sell/child', to: 'categories#child'
   get 'child', to: 'categories#child'

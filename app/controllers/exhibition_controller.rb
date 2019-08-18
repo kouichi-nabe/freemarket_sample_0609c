@@ -36,8 +36,10 @@ class ExhibitionController < ApplicationController
     # Category.create(name: "レディース")
     @item = Item.new(params)
     @item.save! # DBに保存バリデーションに引っかかる場合例外
-    flash.now[:alert] = '商品が出品できました'
-    #redirect_to "/sell"
+    
+    # 同じページのモーダル表示の表示の仕方がわからん
+    # flash.now[:alert] = '商品が出品できました'
+    redirect_to "/itemdetails/#{@item.id}"
   end
 
   private
