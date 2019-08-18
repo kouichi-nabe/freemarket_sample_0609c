@@ -400,7 +400,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
-  payjp
+  payjp (= 0.0.6)
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.3)
