@@ -80,7 +80,7 @@ end
 group :production do
   gem 'unicorn', '5.4.1'
   gem "haml-rails"
-  gem 'payjp', '0.0.6'
+  # gem 'payjp', '0.0.6'
   gem "recaptcha", require: "recaptcha/rails"
   gem 'activerecord-import'
   gem 'gon'
