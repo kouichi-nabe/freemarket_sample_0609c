@@ -84,6 +84,8 @@ group :production do
   gem "recaptcha", require: "recaptcha/rails"
   gem 'activerecord-import'
   gem 'gon'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
   # gem "mechanize"
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
