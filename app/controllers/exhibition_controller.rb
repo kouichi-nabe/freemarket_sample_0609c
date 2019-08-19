@@ -14,32 +14,20 @@ class ExhibitionController < ApplicationController
   end
 
   def create
-    puts ''
-    puts ''
-    puts 'create called'
-    puts ''
-    puts ''
-    puts ''
-    puts ''
-    puts params
-    puts ''
-    puts ''
-
     current_user.id
-    # TODO: itemに紐づいていないものはどうしようか?
+
     params = params_int(item_params)
     params[:seller_id] = current_user.id
-    params[:postage] = 1 # todo
+    params[:postage] = 1
 
-    puts params
-
-    # Category.create(name: "レディース")
     @item = Item.new(params)
-    @item.save! # DBに保存バリデーションに引っかかる場合例外
-    
-    # 同じページのモーダル表示の表示の仕方がわからん
-    # flash.now[:alert] = '商品が出品できました'
-    redirect_to "/itemdetails/#{@item.id}"
+    if @item.save
+      # 同じページのモーダル表示の表示の仕方がわからん
+      redirect_to "/itemdetails/#{@item.id}"
+    else
+      # DBのバリデーションに引っかかる場合
+      redirect_to "/sell"
+    end
   end
 
   private
