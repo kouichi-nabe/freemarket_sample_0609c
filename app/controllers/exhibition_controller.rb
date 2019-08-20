@@ -23,10 +23,10 @@ class ExhibitionController < ApplicationController
     @item = Item.new(params)
     if @item.save
       # 同じページのモーダル表示の表示の仕方がわからん
-      redirect_to "/itemdetails/#{@item.id}"
+      redirect_to itemdetail_path(@item)
     else
       # DBのバリデーションに引っかかる場合
-      redirect_to "/sell"
+      redirect_to sell_path
     end
   end
 
