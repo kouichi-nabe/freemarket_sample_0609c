@@ -1,0 +1,184 @@
+.item-detail-container
+  %h1.item-name
+    メッシュ キャップ 男女兼用 カジュアル 帽子 日除け UVカット 紫外線対策
+  .item-content.clearfix
+    .item-content__images
+      .images-wrapper
+        .images-wrapper__inner
+          .images-wrapper__inner__view
+            .image-item.item-slider
+              .image-item__inner
+                = image_tag("sample_item_1.jpg")
+              .image-item__inner
+                = image_tag("sample_item_2.jpg")
+              .image-item__inner
+                = image_tag("sample_item_3.jpg")
+              .image-item__inner
+                = image_tag("sample_item_4.jpg")
+            .image-item-nav.item-slider-nav
+              .image-item-nav__inner.active{"data-tab": "1"}
+                = image_tag("sample_item_1.jpg")
+              .image-item-nav__inner{"data-tab": "2"}
+                = image_tag("sample_item_2.jpg")
+              .image-item-nav__inner{"data-tab": "3"}
+                = image_tag("sample_item_3.jpg")
+              .image-item-nav__inner{"data-tab": "4"}
+                = image_tag("sample_item_4.jpg")
+    %table.item-content__detail
+      %tbody
+        %tr
+          %th 出品者
+          %td
+            = link_to "user", root_path
+            %div
+              .user-review-box
+                =fa_icon("smile-o")
+                %span 777
+              .user-review-box
+                =fa_icon("meh-o")
+                %span 33
+              .user-review-box
+                =fa_icon("frown-o")
+                %span 0
+        %tr
+          %th カテゴリー
+          %td
+            = link_to "メンズ", root_path
+            = link_to "> 帽子", root_path
+            = link_to "> キャップ", root_path
+        %tr
+          %th ブランド
+          %td
+        %tr
+          %th 商品の状態
+          %td 新品、未使用
+        %tr
+          %th 配送料の負担
+          %td 送料込み（出品者負担）
+        %tr
+          %th 配送の方法
+          %td ゆうゆうメルカリ便
+        %tr
+          %th 配送元地域
+          %td= link_to "東京都", root_path
+        %tr
+          %th 発送日の目安
+          %td 1~2日で発送
+  .item-price-box
+    .item-price ¥ 2,280
+    .item-tax （税込）
+    .item-shoping-fee 送料込み
+  = link_to "購入画面に進む", root_path, class: "item-buy-btn"
+  .item-desc-box
+    %p.item-desc-box__text
+      ご覧頂きありがとうございます★
+
+      新品、未使用、送料込みでこのお値段！！！！
+      今だけ限定！早い者勝ち今がチャンスです★
+
+      【新品未使用（写真撮影のため開封しております）】
+      【送料無料】
+      【1〜2日で発送】
+      ※外のサイトにも出品しているため、売り切れの場合はご了承下さい。
+
+      《商品説明》
+      ★素材構成: ポリエステル
+
+      ★【通気性・速乾性抜群】ハニカム構造エアーキャップは、通気性、速乾性を追求した素材と構造でデザインされています。パイル地が汗をしっかり吸ってくれるので、顔に汗が流れてこず、プレーの邪魔をしない。メッシュ素材なので通気性が高く蒸れること心配なし、素早く汗を吸い上げ、速乾性に優れます。
+
+
+      ★【サイズ調整可能】帽子後ろのベルトは調整できるので、男性、女性を問わずかぶれます。長時間被っていても違和感や締め付け感は感じないし、被り心地はが抜群です。
+
+
+      ★【紫外線対策】つばが長めなので、日差しが強くなるこれからの時期、熱中症や紫外線対策に必須アイテム！アウトドアでの紫外線対策だけではなく、メッシュデザインで通気性も良いので、熱中症対策にも効果的です。
+
+
+      ★【サイズ＆カラー】サイズ：頭周り56－60cm、つばの長さ7.5cm、高さ11cm。カラー：ブラック(サイズは測り方・測る場所により1～2cm程度の誤差がある場合がございます。予めご了承ください)
+
+
+      ★【日除け】日差しが強くになる時期、熱中症予防や紫外線予防には最適です！登山・釣り・ゴルフ・観光などアウトドアスポーツ好きな方にはおすすめします。
+
+      ★【シンプルなデザイン】
+      飽きのこないシンプルなデザインで、被る人を選ばず、どんな服でも似合う、定番のベースボールキャップタイプ、自分用はもちろん、プレゼントとしても喜ばれるアイテムです。
+
+      ★【男女兼用のユニセックスタイプ】
+      シンプルで無地のデザイン＆フリーサイズが性別、年齢やスタイルを問わず副広い方々に被れます。
+      男女兼用なので家族・友達・恋人とお揃いでの着用もお勧めです。
+      年中使えるオシャレアイテムとしてコーディネートの一部に取り入れてみてはいかがでしょうか。
+
+
+      他にも様々な商品をご用意してますので
+      そちらもご覧ください★
+  .item-option-box.clearfix
+    .item-option-box__left
+      %button.like-btn{name: "like", type: "button"}
+        =fa_icon("heart-o")
+        %span いいね！
+        %span.like-counter 6
+      = link_to root_path, class: "report-item" do
+        =fa_icon("flag-o")
+        %span 不適切な商品の報告
+    .item-option-box__right
+      = link_to root_path, target: "_blank" do
+        =fa_icon("lock")
+        %span あんぜん・あんしんへの取り組み
+.item-detail-message
+  .item-detail-message__inner
+    .message-content
+      %ul.message-list
+        %li.message-list__item.clearfix
+          = link_to root_path, class: "message-user" do
+            .message-user__inner
+              .user-image
+                = image_tag("member_photo_noimage_thumb.png")
+              .user-name
+                user
+          .message-body
+            .message-body__text
+              ユーザーのコメント
+            .message-body__option.clearfix
+              .message-body__option__left
+                =fa_icon("clock-o")
+                %span ４日前
+              .message-body__option__right
+                = form_tag('https://www.mercari.com/jp/comment/report/m33754462671/2076673600/', method: "post") do
+                  %button{type: "submit"}
+                    =fa_icon("flag-o")
+    .message-content
+      -# サーバー実装時にform_forへ変更
+      %form
+        %p.message-announcement
+          相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %textarea.textarea-style{name: "body", type: "text"}
+        %button.message-submit{type: "submit"} コメントする
+%ul.nav-item-relation.clearfix
+  %li.nav-item-relation__prev
+    = link_to root_path, class: "nav-item-relation__prev__link" do
+      =fa_icon("arrow-left")
+      なんかアイテム
+  %li.nav-item-relation__next
+    = link_to root_path, class: "nav-item-relation__next__link" do
+      =fa_icon("arrow-right")
+      なんかアイテム
+.item-social-media-box
+  %ul.social-media-box
+    %li
+      = link_to root_path, class: "share-btn" do
+        =fa_icon("facebook-official")
+    %li
+      = link_to root_path, class: "share-btn" do
+        =fa_icon("twitter")
+    %li
+      = link_to root_path, class: "share-btn" do
+        =fa_icon("pinterest-square")
+.item-of-user
+  %section.item-box-wrapper
+    %h2.item-box-head
+      = link_to "userのその他の出品", root_path
+    .item-box-content.clearfix
+      = render partial: "items/item"
+  %section.item-box-wrapper
+    %h2.item-box-head
+      = link_to "ブランドのその他の出品", root_path
+    .item-box-content.last-content.clearfix
+      = render partial: "items/item"

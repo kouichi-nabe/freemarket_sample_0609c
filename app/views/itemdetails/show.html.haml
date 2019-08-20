@@ -1,0 +1,141 @@
+.item-detail-container
+  %h1.item-name
+    = @item.name
+  .item-content.clearfix
+    .item-content__images
+      .images-wrapper
+        .images-wrapper__inner
+          .images-wrapper__inner__view
+            .image-item.item-slider
+              - @item.images.each do |image|
+                .image-item__inner
+                  = image_tag("#{image.image}")
+            .image-item-nav.item-slider-nav
+              - @item.images.each_with_index do |image, i|
+                - if i == 0
+                  .image-item-nav__inner.active{"data-tab": "#{i+1}"}
+                    = image_tag("#{image.image}")
+                - else
+                  .image-item-nav__inner.active{"data-tab": "#{i+1}"}
+                    = image_tag("#{image.image}")
+    %table.item-content__detail
+      %tbody
+        %tr
+          %th 出品者
+          %td
+            = link_to "#{User.find(@item.seller_id).nickname}", root_path #todo: 
+            %div
+              .user-review-box
+                =fa_icon("smile-o")
+                %span 777
+              .user-review-box
+                =fa_icon("meh-o")
+                %span 33
+              .user-review-box
+                =fa_icon("frown-o")
+                %span 0
+        %tr
+          %th カテゴリー
+          %td
+            = link_to "#{Category.find(@item.category_id).name}", root_path
+            = link_to "> #{ChildCategory.find(@item.child_categories_id).name}", root_path
+            = link_to "> #{GrandChildCategory.find(@item.grand_child_categories_id).name}", root_path
+        %tr
+          %th ブランド
+          %td= @item.brand
+        %tr
+          %th 商品の状態
+          %td= @item.condition
+        %tr
+          %th 配送料の負担
+          %td=@item.shipping_method
+        %tr
+          %th 配送の方法
+          %td=@item.shipping_date
+        %tr
+          %th 配送元地域
+          %td= link_to "#{@item.region}", root_path
+        %tr
+          %th 発送日の目安
+          %td=@item.shipping_date
+  .item-price-box
+    .item-price ¥ #{@item.price}
+    .item-tax （税込）
+    .item-shoping-fee 送料込み
+  = link_to "購入画面に進む", root_path, class: "item-buy-btn"
+  .item-desc-box
+    %p.item-desc-box__text
+      = @item.description
+  .item-option-box.clearfix
+    .item-option-box__left
+      %button.like-btn{name: "like", type: "button"}
+        =fa_icon("heart-o")
+        %span いいね！
+        %span.like-counter 6
+      = link_to root_path, class: "report-item" do
+        =fa_icon("flag-o")
+        %span 不適切な商品の報告
+    .item-option-box__right
+      = link_to root_path, target: "_blank" do
+        =fa_icon("lock")
+        %span あんぜん・あんしんへの取り組み
+.item-detail-message
+  .item-detail-message__inner
+    .message-content
+      %ul.message-list
+        %li.message-list__item.clearfix
+          = link_to root_path, class: "message-user" do
+            .message-user__inner
+              .user-image
+                = image_tag("member_photo_noimage_thumb.png")
+              .user-name
+                user
+          .message-body
+            .message-body__text
+              ユーザーのコメント
+            .message-body__option.clearfix
+              .message-body__option__left
+                =fa_icon("clock-o")
+                %span ４日前
+              .message-body__option__right
+                = form_tag('https://www.mercari.com/jp/comment/report/m33754462671/2076673600/', method: "post") do
+                  %button{type: "submit"}
+                    =fa_icon("flag-o")
+    .message-content
+      -# サーバー実装時にform_forへ変更
+      %form
+        %p.message-announcement
+          相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %textarea.textarea-style{name: "body", type: "text"}
+        %button.message-submit{type: "submit"} コメントする
+%ul.nav-item-relation.clearfix
+  %li.nav-item-relation__prev
+    = link_to root_path, class: "nav-item-relation__prev__link" do
+      =fa_icon("arrow-left")
+      なんかアイテム
+  %li.nav-item-relation__next
+    = link_to root_path, class: "nav-item-relation__next__link" do
+      =fa_icon("arrow-right")
+      なんかアイテム
+.item-social-media-box
+  %ul.social-media-box
+    %li
+      = link_to root_path, class: "share-btn" do
+        =fa_icon("facebook-official")
+    %li
+      = link_to root_path, class: "share-btn" do
+        =fa_icon("twitter")
+    %li
+      = link_to root_path, class: "share-btn" do
+        =fa_icon("pinterest-square")
+.item-of-user
+  %section.item-box-wrapper
+    %h2.item-box-head
+      = link_to "userのその他の出品", root_path
+    .item-box-content.clearfix
+      = render partial: "items/item"
+  %section.item-box-wrapper
+    %h2.item-box-head
+      = link_to "ブランドのその他の出品", root_path
+    .item-box-content.last-content.clearfix
+      = render partial: "items/item"

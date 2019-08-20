@@ -8,13 +8,16 @@ Rails.application.routes.draw do
   }
   root to: 'items#index'
 
+  # get "itemdetails", to: "itemdetails#index"
+  resources :itemdetails, only: [:index, :show]
+
   get 'sell/child', to: 'categories#child'
   get 'child', to: 'categories#child'
   get 'sell/grand', to: 'categories#grand'
   get 'grand', to: 'categories#grand'
 
-  get "sell" => "exhibition#index"
-  post "create" => "exhibition#create"
+  get "sell" => "exhibition#index"     # 出品入力画面
+  post "create" => "exhibition#create" # 出品
 
   get 'signups/address' , to: 'signups#address'
   get 'signups/complete' , to: 'signups#complete'

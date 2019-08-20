@@ -14,25 +14,25 @@ class ExhibitionController < ApplicationController
   end
 
   def create
-    puts ''
-    puts ''
-    puts 'create called'
-    puts ''
-    puts ''
-
     current_user.id
-    # TODO: itemに紐づいていないものはどうしようか?
+
     params = params_int(item_params)
     params[:seller_id] = current_user.id
-    params[:postage] = 1 # todo
-    Category.create(name: "レディース")
+    params[:postage] = 1
+
     @item = Item.new(params)
-    @item.save! # DBに保存バリデーションに引っかかる場合例外
+    if @item.save
+      # 同じページのモーダル表示の表示の仕方がわからん
+      redirect_to itemdetail_path(@item)
+    else
+      # DBのバリデーションに引っかかる場合
+      redirect_to sell_path
+    end
   end
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :category_id, :condition, :size, :brand, :shipping_method, :region, :shipping_date, :price,images_attributes: [:image])
+    params.require(:item).permit(:name, :description, :category_id, :child_categories_id, :grand_child_categories_id, :condition, :size, :brand, :shipping_method, :region, :shipping_date, :price,images_attributes: [:image])
   end
 
   def params_int(model_params)
