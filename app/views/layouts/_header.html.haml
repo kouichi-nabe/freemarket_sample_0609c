@@ -38,11 +38,11 @@
           - if current_user
             %li.user-nav__item
               = link_to root_path, class: 'user-nav__item__link' do
-                %i.fa.fa-heart-o{"aria-hidden": "true"}
+                =fa_icon("heart")
                 %span いいね！一覧
             %li.user-nav__item
               = link_to root_path, class: 'user-nav__item__link' do
-                %i.fa.fa-bell-o{"aria-hidden": "true"}
+                =fa_icon("bell")
                 %span お知らせ
                 .user-nav__item__link__count
                   7
@@ -60,7 +60,7 @@
                     %i.fa.fa-arrow-right{"aria-hidden": "true"}
             %li.user-nav__item
               = link_to root_path, class: 'user-nav__item__link' do
-                %i.fa.fa-check{"aria-hidden": "true"}
+                =fa_icon("check")
                 %span やることリスト
               %ul.user-nav__item__box.mypage-item-list
                 %li
