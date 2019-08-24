@@ -32,8 +32,11 @@ class ExhibitionController < ApplicationController
   end
 
   def destroy
-    @item.destroy
-    redirect_to root_path, notice: "削除しました。"
+    if @item.destroy
+      redirect_to root_path, notice: "削除しました。"
+    else
+      redirect_to itemdetails_path, notice: "削除に失敗しました。"
+    end
   end
 
   private
