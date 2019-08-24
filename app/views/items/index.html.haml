@@ -13,8 +13,7 @@
         = link_to root_path do
           レディース 新着アイテム
       .items-box-content.clearfix
-        = render partial: "item"
-        / colection: @変数 の変数で内容を入れる
+        = render partial: "item", collection: @items, as: 'item'
       .view-all
         = link_to root_path do
           すべての商品を見る
