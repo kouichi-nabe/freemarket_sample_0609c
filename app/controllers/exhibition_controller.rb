@@ -1,6 +1,7 @@
 class ExhibitionController < ApplicationController
   # views/layouts/exhibitionをレイアウトとして使う
   layout "exhibition"
+  before_action :set_product, only: [:destroy]
 
   def index
     @item = Item.new
@@ -30,6 +31,11 @@ class ExhibitionController < ApplicationController
     end
   end
 
+  def destroy
+    @item.destroy
+    redirect_to root_path, notice: "削除しました。"
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :description, :category_id, :child_categories_id, :grand_child_categories_id, :condition, :size, :brand, :shipping_method, :region, :shipping_date, :price,images_attributes: [:image])
@@ -50,5 +56,9 @@ class ExhibitionController < ApplicationController
     rescue
       false
     end
+  end
+
+  def set_product
+    @item = Item.find(params[:id])
   end
 end
