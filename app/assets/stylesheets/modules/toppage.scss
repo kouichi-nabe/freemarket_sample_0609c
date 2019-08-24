@@ -99,7 +99,7 @@ a:hover {
             @include mq(md) {
               width: 213px;
             }
-            &__image {
+            img {
               @include normal_image;
               position: absolute;
               top: 0;
