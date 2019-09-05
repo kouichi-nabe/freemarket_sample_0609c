@@ -52,9 +52,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :purchase, only: [:index] do
-    collection do
-      post 'pay', to: 'purchase#pay'
+  resources :exhibition, only: [:index, :create, :destroy] do
+    resources :purchase, only: [:index] do
+      collection do
+        post 'pay', to: 'purchase#pay'
+      end
     end
   end
 end

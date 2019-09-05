@@ -79,6 +79,11 @@
       = link_to root_path, target: "_blank" do
         =fa_icon("lock")
         %span あんぜん・あんしんへの取り組み
+        -# --------------current_userの時のみ、編集・停止。削除btn表示------------------
+  - if current_user.id
+    .item__delete-btn
+      = link_to "この商品を削除する",exhibition_path,method: :delete, class: "item-buy-btn"
+
 .item-detail-message
   .item-detail-message__inner
     .message-content
